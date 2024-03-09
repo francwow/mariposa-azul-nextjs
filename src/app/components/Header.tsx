@@ -1,7 +1,13 @@
+import Logo from "./Logo";
+import MainNav from "./MainNav";
+
 const Header = () => {
   return (
-    <div>
-      <h1>header</h1>
+    <div className="header-container">
+      <header className="header">
+        <Logo />
+        <MainNav />
+      </header>
     </div>
   );
 };

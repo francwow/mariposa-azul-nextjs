@@ -1,10 +1,51 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Montserrat, Yeseva_One } from "next/font/google";
 import localFont from "next/font/local";
 import React from "react";
 import "./globals.css";
+import Header from "./components/Header";
+import Provider from "./components/Provider";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+});
+const yeseva = Yeseva_One({
+  subsets: ["latin"],
+  variable: "--font-yeseva",
+  weight: ["400"],
+});
+const glacial = localFont({
+  variable: "--font-glacial",
+  src: [
+    {
+      path: "../app/fonts/GlacialIndifference-Regular.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../app/fonts/GlacialIndifference-Italic.otf",
+      weight: "400",
+      style: "italic",
+    },
+    {
+      path: "../app/fonts/GlacialIndifference-Bold.otf",
+      weight: "700",
+      style: "bold",
+    },
+  ],
+});
+const hortensia = localFont({
+  variable: "--font-hortensia",
+  src: [
+    {
+      path: "../app/fonts/Hortensia-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+});
 
 const materialSymbols = localFont({
   variable: "--font-family-symbols", // Variable name (to reference after in CSS/styles)
@@ -26,7 +67,14 @@ export default function RootLayout({
 }>) {
   return (
     <html className={`${materialSymbols.variable}`} lang="en">
-      <body className={inter.className}>{children}</body>
+      <Provider>
+        <body
+          className={`${inter.variable} ${montserrat.variable} ${yeseva.variable} ${hortensia.variable} ${glacial.variable}`}
+        >
+          <Header />
+          {children}
+        </body>
+      </Provider>
     </html>
   );
 }
