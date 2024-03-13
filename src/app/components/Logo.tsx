@@ -4,9 +4,9 @@ import Link from "next/link";
 const Logo = () => {
   return (
     <div className="logo-container">
-      <Link href={"/"}>
+      <Link href={"#"}>
         <Image
-          src={"/logo/logo2.webp"}
+          src={"/logo/logo-website.webp"}
           alt="logo de Mariposa Azul"
           width={500}
           height={500}

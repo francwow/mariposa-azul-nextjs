@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { InicioItems } from "@/app/data/InicioItems";
 import { useEffect, useState } from "react";
+import InicioSoon from "./InicioSoon";
+import InicioTherapies from "./InicioTherapies";
 
 const Inicio = () => {
   const [index, setIndex] = useState<number>(0);
@@ -25,6 +27,7 @@ const Inicio = () => {
   return (
     <section className="inicio-section">
       <div className="inicio-carousel">
+        <div className="inicio-overlay"></div>
         {InicioItems.map((item) => {
           return (
             <div
@@ -43,6 +46,8 @@ const Inicio = () => {
           );
         })}
       </div>
+      <InicioSoon />
+      <InicioTherapies />
     </section>
   );
 };

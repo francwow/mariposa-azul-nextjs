@@ -1,15 +1,25 @@
 "use client";
 
 import { PropsWithChildren, useState } from "react";
-import { LanguageContext } from "../contexts/ContextHooks";
-import { LanguageType } from "../types/Types";
+import {
+  ExtraNavContext,
+  LanguageContext,
+  NavActiveContext,
+} from "../contexts/ContextHooks";
+import { ExtraNavType, LanguageType, NavActiveType } from "../types/Types";
 
 const Provider = (props: PropsWithChildren) => {
   const [language, setLanguage] = useState<LanguageType>("ES");
+  const [navActive, setNavActive] = useState<NavActiveType>(false);
+  const [extraNav, setExtraNav] = useState<ExtraNavType>(null);
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage }}>
-      {props.children}
+      <NavActiveContext.Provider value={{ navActive, setNavActive }}>
+        <ExtraNavContext.Provider value={{ extraNav, setExtraNav }}>
+          {props.children}
+        </ExtraNavContext.Provider>
+      </NavActiveContext.Provider>
     </LanguageContext.Provider>
   );
 };
