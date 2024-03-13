@@ -1,4 +1,5 @@
 import { useLanguage } from "../contexts/ContextHooks";
+import { useInView } from "react-intersection-observer";
 import Image from "next/image";
 import MainBtn from "./MainBtn";
 
@@ -11,9 +12,17 @@ type TherapiesItemProps = {
 
 const TherapiesItem = ({ imgSrc, nameES, nameEN, alt }: TherapiesItemProps) => {
   const { language } = useLanguage();
+  const { inView: itemInView, ref: itemRef } = useInView({
+    threshold: 0.5,
+    triggerOnce: true,
+  });
 
   return (
-    <div className="therapies-item">
+    <div
+      ref={itemRef}
+      style={{ opacity: "0" }}
+      className={itemInView ? "therapies-item fade-up" : "therapies-item"}
+    >
       <div className="therapies-img">
         <Image src={imgSrc} alt={alt} width={700} height={700} />
       </div>

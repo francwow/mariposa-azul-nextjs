@@ -1,6 +1,7 @@
 import Image from "next/image";
 import MainBtn from "./MainBtn";
 import { useLanguage } from "../contexts/ContextHooks";
+import { useInView } from "react-intersection-observer";
 
 type SoonItemProps = {
   imgSrc: string;
@@ -20,9 +21,17 @@ const SoonItem = ({
   alt,
 }: SoonItemProps) => {
   const { language } = useLanguage();
+  const { inView: itemInView, ref: itemRef } = useInView({
+    threshold: 0.5,
+    triggerOnce: true,
+  });
 
   return (
-    <div className="soon-item">
+    <div
+      ref={itemRef}
+      style={{ opacity: "0" }}
+      className={itemInView ? "soon-item fade-up" : "soon-item"}
+    >
       <div className="soon-img">
         <Image src={imgSrc} alt={alt} width={700} height={700} />
       </div>
