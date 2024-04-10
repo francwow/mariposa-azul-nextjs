@@ -1,6 +1,6 @@
 "use client";
 
-import { useExtraNav, useLanguage } from "../contexts/ContextHooks";
+import { useExtraNav, useLanguage, useNav } from "../contexts/ContextHooks";
 import Link from "next/link";
 
 type NavExtraItems = {
@@ -15,6 +15,7 @@ type NavExtraItemProps = {
 };
 
 const NavExtraItem = ({ navName, navExtraItems }: NavExtraItemProps) => {
+  const { setNavActive } = useNav();
   const { extraNav, setExtraNav } = useExtraNav();
   const { language } = useLanguage();
 
@@ -40,7 +41,19 @@ const NavExtraItem = ({ navName, navExtraItems }: NavExtraItemProps) => {
       <ul className="nav-items">
         {navExtraItems?.map((item, index) => {
           return (
-            <li key={index} className="nav-item">
+            <li
+              tabIndex={0}
+              // eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role
+              role="button"
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  setNavActive(false);
+                }
+              }}
+              onClick={() => setNavActive(false)}
+              key={index}
+              className="nav-item"
+            >
               <Link href={item.href}>
                 {language === "ES" ? item.textES : item.textEN}
               </Link>

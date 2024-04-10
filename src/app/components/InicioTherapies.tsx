@@ -1,16 +1,18 @@
+"use client";
+
 import { useLanguage } from "../contexts/ContextHooks";
 import { useInView } from "react-intersection-observer";
-import TherapiesItem from "./TherapiesItem";
+import InfoCard from "./InfoCard";
 
 const InicioTherapies = () => {
   const { language } = useLanguage();
   const { inView: itemInView, ref: itemRef } = useInView({
-    threshold: 0.9,
+    threshold: 0.6,
     triggerOnce: true,
   });
 
   return (
-    <div className="inicio-therapies">
+    <section className="inicio-therapies">
       <h2
         style={{ opacity: "0" }}
         ref={itemRef}
@@ -21,32 +23,36 @@ const InicioTherapies = () => {
           : "Personalized Alternative Therapies"}
       </h2>
       <div className="therapies-items">
-        <TherapiesItem
+        <InfoCard
           imgSrc="/terapias/terapias-escucha.webp"
           nameES="El arte de la escuha"
           nameEN="Art of listening"
           alt="Imagen de dos mujeres hablando y sonriendo."
+          btnBgColor="white"
         />
-        <TherapiesItem
+        <InfoCard
           imgSrc="/terapias/terapias-constelaciones.webp"
           nameES="Constelaciones familiares"
           nameEN="Family constellations"
           alt="Imagen de personas moviendo piezas de madera en un tablero."
+          btnBgColor="white"
         />
-        <TherapiesItem
+        <InfoCard
           imgSrc="/terapias/terapias-duelo.webp"
           nameES="Terapia de duelo"
           nameEN="Grief therapy"
           alt="Imagen de una mujer consolando a otra mujer que llora."
+          btnBgColor="white"
         />
-        <TherapiesItem
+        <InfoCard
           imgSrc="/terapias/terapias-biodescodificacion.webp"
           nameES="Biodescodificación"
           nameEN="Biodecoding"
           alt="Imagen de mujeres explicando algo con sus manos."
+          btnBgColor="white"
         />
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -1,26 +1,19 @@
-"use client";
-
 import Link from "next/link";
-import { useLanguage } from "../contexts/ContextHooks";
 import Icon from "./GoogleIcon";
+import { PropsWithChildren } from "react";
 
 type MainBtnProps = {
-  btnTextES: string;
-  btnTextEN: string;
   href: string;
   target: boolean;
-  bgColor: string;
+  bgColor: "white" | "blue";
 };
 
 const MainBtn = ({
-  btnTextES,
-  btnTextEN,
   href,
   target,
   bgColor,
-}: MainBtnProps) => {
-  const { language } = useLanguage();
-
+  children,
+}: PropsWithChildren & MainBtnProps) => {
   return (
     <div
       className={
@@ -29,17 +22,10 @@ const MainBtn = ({
           : "main-btn-container blue"
       }
     >
-      {language === "ES" ? (
-        <Link href={href} target={target ? "_blank" : "_self"}>
-          {btnTextES}
-          <Icon icon="arrow_forward_ios" />
-        </Link>
-      ) : (
-        <Link href={href} target={target ? "_blank" : "_self"}>
-          {btnTextEN}
-          <Icon icon="arrow_forward_ios" />
-        </Link>
-      )}
+      <Link href={href} target={target ? "_blank" : "_self"}>
+        {children}
+        <Icon icon="arrow_forward_ios" />
+      </Link>
     </div>
   );
 };

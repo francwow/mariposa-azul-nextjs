@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { useExtraNav, useLanguage, useNav } from "../contexts/ContextHooks";
 import { useEffect } from "react";
@@ -27,7 +29,7 @@ const NavItem = ({
   navName,
   navExtraItems,
 }: NavItemProps) => {
-  const { navActive } = useNav();
+  const { navActive, setNavActive } = useNav();
   const { language } = useLanguage();
   const { extraNav, setExtraNav } = useExtraNav();
 
@@ -38,7 +40,18 @@ const NavItem = ({
   }, [navActive, setExtraNav]);
 
   return !extra ? (
-    <li className="nav-item">
+    <li
+      tabIndex={0}
+      // eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role
+      role="button"
+      onKeyDown={(e) => {
+        if (e.key === "Enter") {
+          setNavActive(false);
+        }
+      }}
+      onClick={() => setNavActive(false)}
+      className="nav-item"
+    >
       <Link
         style={
           navActive
@@ -62,7 +75,9 @@ const NavItem = ({
       }}
       onMouseEnter={() => setExtraNav(navName)}
       onMouseLeave={() => setExtraNav(null)}
-      onClick={() => setExtraNav(navName)}
+      onClick={() => {
+        setExtraNav(navName);
+      }}
       className="nav-item"
     >
       <Link

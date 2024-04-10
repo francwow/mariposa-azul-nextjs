@@ -7,7 +7,6 @@ import Header from "./components/Header";
 import Provider from "./components/Provider";
 import Whatsapp from "./components/Whatsapp";
 import ScrollNav from "./components/ScrollNav";
-import Footer from "./components/Footer";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const montserrat = Montserrat({
@@ -79,7 +78,6 @@ export default function RootLayout({
           <Whatsapp />
           <ScrollNav />
           {children}
-          <Footer />
         </body>
       </Provider>
     </html>

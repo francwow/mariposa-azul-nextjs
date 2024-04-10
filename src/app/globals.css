@@ -24,7 +24,6 @@ html {
 }
 
 body {
-  min-height: 300vh;
   overflow-x: hidden;
   scroll-behavior: smooth !important;
   --header-height-px: calc(var(--header-height) * 1px);
@@ -37,7 +36,12 @@ body {
   --color-yellow: #efd039;
   --color-light: #f4f0f0;
   --color-dark: #292929;
+  --color-junglegreen: #2c4034;
+  --color-espresso: #5a4027;
+  --color-bluestone: #4c617c;
+  --color-darkblue: #0f172a;
   background-color: var(--color-blue);
+  color: var(--color-dark);
 }
 
 img,
@@ -49,7 +53,7 @@ video {
 }
 
 img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
 }
 
@@ -75,12 +79,75 @@ i.symbol {
 
 h1 {
   font-size: 4rem;
-  font-family: var(--font-hortensia);
+  line-height: normal;
 }
 
 h2 {
   font-family: var(--montserrat);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  line-height: normal;
+}
+
+section:not(.inicio-carousel, .somos-hero-section) {
+  position: relative;
+  padding: 4rem 1rem;
+  overflow: hidden;
+}
+
+.main-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+/* InfoCard */
+.info-card-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+  flex-basis: 30%;
+  font-family: var(--font-inter);
+  cursor: pointer;
+}
+
+.info-card-name {
+  font-size: 1.5rem;
+  line-height: normal;
+  text-align: center;
+  padding: 0.5rem 0;
   font-weight: 600;
+  font-family: var(--font-glacial);
+}
+
+.info-card-date {
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 0.5rem 0;
+  font-weight: 300;
+}
+
+.info-card-img {
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.info-card-img img {
+  width: 100%;
+  height: auto;
+  transition: 0.5s ease transform;
+}
+
+.info-card-item:hover img {
+  transform: scale(1.1);
+}
+
+.info-card-info {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
 /* Whatsapp */
@@ -115,6 +182,7 @@ h2 {
 .languages-es,
 .languages-en {
   padding: 5px;
+  color: white;
 }
 
 .languages:after {
@@ -132,9 +200,13 @@ h2 {
 }
 
 /* MainBtn */
+.main-btn-container {
+  width: 100%;
+}
+
 .main-btn-container a {
   position: relative;
-  font-family: var(--montserrat);
+  font-family: var(--inter);
   padding: 10px 20px;
   border-radius: 8px;
   font-size: 1.1rem;
@@ -144,11 +216,12 @@ h2 {
   align-items: center;
   text-align: center;
   gap: 10px;
+  box-shadow: 0px 3px 6px 1px rgba(0, 0, 0, 0.1);
 }
 
 .main-btn-container.white a {
   background-color: white;
-  color: var(--color-blue);
+  color: var(--color-dark);
 }
 
 .main-btn-container.blue a {
@@ -181,7 +254,7 @@ h2 {
   font-size: 1.5rem;
   font-weight: 300;
   padding: 5px;
-  color: var(--color-white);
+  color: white;
   background-color: rgb(38, 38, 38);
   box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.3);
   border-radius: 50%;
@@ -221,6 +294,99 @@ h2 {
   height: 30px;
   width: 30px;
   fill: white;
+}
+
+/* Flowers */
+.flowers-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  opacity: 0.2;
+}
+
+@keyframes flower {
+  0% {
+    transform: scale(2) rotate(0deg);
+  }
+  20% {
+    transform: scale(2.04) rotate(5deg);
+  }
+  40% {
+    transform: scale(2) rotate(0deg);
+  }
+  60% {
+    transform: scale(2.1) rotate(15deg);
+  }
+  80% {
+    transform: scale(2) rotate(0deg);
+  }
+  90% {
+    transform: scale(2.07) rotate(10deg);
+  }
+  100% {
+    transform: scale(2) rotate(0deg);
+  }
+}
+
+.circle {
+  position: relative;
+  background: #edc442;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+}
+
+.triangle {
+  margin-top: -20px;
+  width: 0;
+  height: 0;
+  border-top: 80px solid #edc442;
+  border-left: 28px solid transparent;
+  border-right: 28px solid transparent;
+}
+
+.petal {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform-origin: center 120px;
+}
+
+.petal:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.petal:nth-child(2) {
+  transform: rotate(65deg);
+}
+
+.petal:nth-child(2) {
+  transform: rotate(90deg);
+}
+
+.petal:nth-child(3) {
+  transform: rotate(135deg);
+}
+
+.petal:nth-child(5) {
+  transform: rotate(180deg);
+}
+
+.petal:nth-child(6) {
+  transform: rotate(225deg);
+}
+
+.petal:nth-child(7) {
+  transform: rotate(270deg);
+}
+
+.petal:nth-child(8) {
+  transform: rotate(315deg);
+}
+
+.petal:nth-child(9) {
+  transform: rotate(360deg);
 }
 
 /* <Header /> */
@@ -280,7 +446,7 @@ h2 {
 .nav-container {
   visibility: hidden;
   transform: translate3d(0, 0, 0);
-  position: absolute;
+  position: fixed;
   inset: 0;
   width: 100vw;
   height: 100vh;
@@ -346,6 +512,7 @@ h2 {
   justify-content: center;
   align-items: center;
   gap: 10px;
+  color: white;
 }
 
 .nav-container.active a {
@@ -397,35 +564,45 @@ h2 {
 }
 
 /* <Inicio /> */
-.inicio-section {
+.inicio-wrapper {
   position: relative;
   overflow: hidden;
-  /* height: 100vh; */
-}
-
-.inicio-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, #132b6b94 5%, transparent);
-  z-index: 99;
 }
 
 .inicio-carousel {
   position: relative;
-  height: 100vh;
+  height: 60vh;
 }
 
-.carousel-item {
+.inicio-carousel .carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.inicio-carousel .carousel-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #132b6be4 5%, transparent);
+  z-index: 99;
+}
+
+.inicio-carousel .carousel-item {
   position: absolute;
   inset: 0;
   transform: translate3d(100%, 0, 0);
 }
 
-.carousel-item[data-active="true"] {
+.inicio-carousel .carousel-item[data-active="true"] {
   transform: translate3d(0, 0, 0);
 }
 
-.carousel-item img {
+.inicio-carousel .carousel-img {
+  position: absolute;
+  inset: 0;
+}
+
+.inicio-carousel .carousel-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -433,23 +610,63 @@ h2 {
 
 /* InicioSoon */
 .inicio-soon {
-  position: relative;
-  padding: 4rem 1rem;
+  background-color: var(--color-light);
+  color: var(--color-dark);
+}
+
+.inicio-soon .flower-0 {
+  position: absolute;
+  transform: scale(2);
+  top: 0%;
+  right: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: flower 20s ease forwards infinite;
+}
+
+.inicio-soon .flower-1 {
+  position: absolute;
+  transform: scale(2);
+  bottom: 20%;
+  left: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inicio-soon:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 5%;
+  right: 5%;
+  background-color: var(--color-dark);
+  height: 1px;
+  margin: auto;
 }
 
 .inicio-soon h2 {
-  font-size: 2rem;
-  padding: 1rem;
   text-align: center;
-  font-family: var(--montserrat);
+  position: relative;
+  z-index: 99;
 }
 
 .soon-items {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.soon-items .info-card-item {
+  height: 550px;
+  justify-content: space-between;
+  max-width: 540px;
+  max-width: 540px;
 }
 
 .soon-item {
@@ -491,56 +708,479 @@ h2 {
 
 /* InicioTherapies */
 .inicio-therapies {
-  position: relative;
-  padding: 4rem 1rem;
-  background-color: white;
+  background-color: var(--color-light);
+}
+
+.inicio-therapies:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 5%;
+  right: 5%;
+  background-color: var(--color-dark);
+  height: 1px;
+  margin: auto;
 }
 
 .inicio-therapies h2 {
-  font-size: 2rem;
-  padding: 1rem;
   text-align: center;
-  color: var(--color-blue);
-  font-family: var(--montserrat);
 }
 
 .therapies-items {
   position: relative;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  row-gap: 5vw;
+  column-gap: 2vw;
 }
 
-.therapies-item {
+.therapies-items .info-card-item {
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 2rem 0;
-  flex-basis: 22%;
+  flex-basis: 40%;
   font-family: var(--font-inter);
-  color: var(--color-blue);
   cursor: pointer;
+  min-width: 280px;
 }
 
-.therapies-name {
-  font-size: 1.3rem;
+.therapies-items .info-card-img {
+  max-height: 350px;
+}
+
+/* InicioTestimonials */
+.inicio-testimonials {
+  background-color: var(--color-light);
+}
+
+.inicio-testimonials h2 {
   text-align: center;
-  padding: 0.5rem 0;
-  font-weight: 500;
 }
 
-.therapies-img {
+.inicio-testimonials .carousel {
+  position: relative;
+  max-width: 900px;
+  height: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.inicio-testimonials .arrow-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.inicio-testimonials .arrow {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.inicio-testimonials .arrow:first-child {
+  transform: rotate(180deg);
+  z-index: 99;
+}
+
+.inicio-testimonials .arrow:nth-child(2) {
+  z-index: 99;
+}
+
+.inicio-testimonials .carousel-item {
+  position: absolute;
+  color: var(--color-blue);
+  padding: 1rem;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease transform;
+}
+
+.inicio-testimonials .carousel-item[data-inverted="true"] {
+  transform: translate3d(200%, 0, 0);
+  animation: not-active-inverted 0.5s ease forwards;
+}
+
+@keyframes not-active-inverted {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate3d(200%, 0, 0);
+    opacity: 0;
+  }
+}
+
+.inicio-testimonials .carousel-item[data-inverted="false"] {
+  transform: translate3d(200%, 0, 0);
+  animation: not-active-not-inverted 0.5s ease forwards;
+}
+
+@keyframes not-active-not-inverted {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate3d(-200%, 0, 0);
+    opacity: 0;
+  }
+}
+
+.inicio-testimonials .carousel-item[data-inverted="true"].active {
+  display: block;
+  position: static;
+  opacity: 1;
+  animation: active-inverted 0.5s ease forwards;
+}
+
+@keyframes active-inverted {
+  0% {
+    transform: translate3d(-200%, 0, 0);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+.inicio-testimonials .carousel-item[data-inverted="false"].active {
+  display: block;
+  position: static;
+  opacity: 1;
+  animation: active-not-inverted 0.5s ease forwards;
+}
+
+@keyframes active-not-inverted {
+  0% {
+    transform: translate3d(200%, 0, 0);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+.inicio-testimonials .carousel-item p {
+  font-style: italic;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #292929;
+  text-align: justify;
+}
+
+.inicio-testimonials .carousel-item h3 {
+  font-family: var(--font-montserrat);
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+/* SomosHero */
+.somos-hero-section {
+  width: 100%;
+  height: 60vh;
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding: 10vw;
+}
+
+.somos-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #132b6be4 5%, transparent);
+  z-index: 99;
+}
+
+.somos-hero-img {
+  position: absolute;
+  inset: 0;
+}
+
+.somos-hero-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.somos-hero-heading {
+  z-index: 99;
+  font-family: var(--font-montserrat);
+}
+
+.somos-hero-heading h1 {
+  font-size: 2.2rem;
+  line-height: normal;
+  font-weight: 300;
+  color: white;
+}
+
+.somos-hero-heading h2 {
+  line-height: normal;
+  color: white;
+}
+
+/* SomosInfo */
+.somos-info-section {
+  background-color: var(--color-light);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+.somos-info-section:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 5%;
+  right: 5%;
+  background-color: var(--color-dark);
+  height: 1px;
+  margin: auto;
+}
+
+.somos-info-heading {
+  position: relative;
+}
+
+.somos-info-heading:first-child h2 {
+  text-align: center;
+  color: var(--color-dark);
+}
+
+.somos-info p {
+  font-family: var(--inter);
+  color: var(--color-dark);
+  text-align: justify;
+}
+
+.somos-info-video {
+  flex-basis: 50%;
+  width: 100%;
+  max-width: 700px;
+}
+
+.somos-video {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.somos-info-text {
+  flex-basis: 50%;
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+/* SomosFundadoras */
+.somos-fundadoras-section {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-light);
+}
+
+.somos-fundadoras-section .flower-0 {
+  position: absolute;
+  transform: scale(2);
+  top: 0%;
+  right: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: flower 20s ease forwards infinite;
+}
+
+.somos-fundadoras-section .flower-1 {
+  position: absolute;
+  transform: scale(2);
+  bottom: 20%;
+  left: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.somos-fundadoras-info {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5vw;
+  padding: 2rem 0;
+  max-width: 720px;
+  z-index: 99;
+}
+
+.somos-fundadoras-heading {
+  position: relative;
+  z-index: 99;
+}
+
+.somos-fundadoras-heading h2 {
+  text-align: center;
+}
+
+.somos-fundadoras-item {
+  position: relative;
+  max-width: 700px;
+  height: 470px;
+  /* flex-basis: 50%; */
   overflow: hidden;
   border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
 
-.therapies-img img {
+.somos-fundadoras-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 20%,
+    var(--color-yellow) 70%
+  );
+}
+
+.somos-fundadoras-img {
+  position: absolute;
+  inset: 0;
+}
+
+.somos-fundadoras-img img {
   width: 100%;
-  height: auto;
-  transition: 0.5s ease transform;
+  height: 100%;
+  object-fit: cover;
+}
+
+.somos-fundadoras-text {
+  position: relative;
+  z-index: 99;
+  padding: 1rem;
+  color: white;
+}
+
+.somos-fundadoras-text h3 {
+  font-size: 1.8rem;
+  font-family: var(--hortensia);
+  font-weight: 700;
+}
+
+.somos-fundadoras-text p {
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: var(--inter);
+}
+
+/* Contact */
+.contact-section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-bg-img {
+  position: absolute;
+  inset: 0;
+}
+
+.contact-bg-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(5px);
+}
+
+.contact-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #132b6be4 5%, transparent);
+  z-index: 89;
+}
+
+.contact-info {
+  z-index: 99;
+  color: white;
+  max-width: 720px;
+  margin-top: 3rem;
+}
+
+.contact-info-text {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.contact-info h3 {
+  font-size: 1.5rem;
+  font-family: var(--font-inter);
+  font-weight: 200;
+}
+
+.contact-info span {
+  position: relative;
+  display: block;
+  font-size: 1.2rem;
+  font-family: var(--inter);
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.contact-info a {
+  color: var(--color-yellow);
+}
+
+.contact-info svg {
+  fill: var(--color-yellow);
+}
+
+.contact-info-social .social-links-container {
+  justify-content: flex-start;
 }
 
 /* <Footer /> */
@@ -563,11 +1203,22 @@ h2 {
   justify-content: center;
   align-items: center;
   text-align: center;
+  color: white;
 }
 
 /* Desktop */
 @media screen and (min-width: 991px) {
   /* General Styles */
+  h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  section:not(.inicio-carousel, .somos-hero-section) {
+    position: relative;
+    padding: 6rem 3rem;
+  }
+
   .whatsapp {
     width: 50px;
     height: 50px;
@@ -584,6 +1235,7 @@ h2 {
   .languages-en {
     cursor: pointer;
     font-size: 1.2rem;
+    color: white;
   }
 
   .scroll-up-btn {
@@ -594,6 +1246,19 @@ h2 {
 
   .scroll-up-btn .symbol {
     font-size: 2.2rem;
+  }
+
+  .main-btn-container {
+    position: relative;
+  }
+
+  /* InfoCard */
+  .info-card-name {
+    font-size: 1.7rem;
+  }
+
+  .info-card-date {
+    font-size: 1.3rem;
   }
 
   /* <Header /> */
@@ -703,25 +1368,20 @@ h2 {
   }
 
   /* <Inicio /> */
-  .inicio-section {
+  .inicio-wrapper {
     position: relative;
     overflow: hidden;
     /* height: 100vh; */
   }
 
   /* InicioSoon */
-  .inicio-soon {
-    position: relative;
-    padding: 8rem 4rem;
-  }
-
   .soon-items {
     flex-direction: row;
     align-items: flex-start;
   }
 
-  .inicio-soon h2 {
-    font-size: 4rem;
+  .soon-items .info-card-item {
+    min-width: 400px;
   }
 
   .soon-item:hover img {
@@ -729,26 +1389,153 @@ h2 {
   }
 
   /* InicioTherapies */
-  .inicio-therapies {
-    position: relative;
-    padding: 8rem 4rem;
-  }
-
   .therapies-items {
     flex-direction: row;
     align-items: flex-start;
-  }
-
-  .inicio-therapies h2 {
-    font-size: 4rem;
+    row-gap: 5vw;
+    column-gap: 5vw;
   }
 
   .therapies-item:hover img {
     transform: scale(1.1);
   }
 
+  /* InicioTestimonials */
+  .inicio-testimonials .carousel-item p {
+    font-style: italic;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+  }
+
+  .inicio-testimonials .carousel-item h3 {
+    font-family: var(--font-montserrat);
+    font-weight: 600;
+    font-size: 1.3rem;
+  }
+
+  .inicio-testimonials .arrow {
+  }
+
+  .arrow .symbol {
+    font-size: 3rem;
+  }
+
+  .inicio-testimonials .arrow:first-child {
+  }
+
+  .inicio-testimonials .arrow:nth-child(2) {
+  }
+
+  /* SomosHero */
+  .somos-hero-section {
+    padding: 5vw;
+  }
+
+  .somos-hero-heading h1 {
+    font-size: 3rem;
+  }
+
+  /* SomosInfo */
+  .somos-info-section {
+    gap: 5rem;
+  }
+
+  .somos-info-video {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+  }
+
+  .somos-info .main-btn-container {
+    width: fit-content;
+  }
+
+  .somos-info-text {
+    max-width: 1200px;
+  }
+
+  .somos-info p {
+    font-size: 1.2rem;
+  }
+
+  /* SomosFundadoras */
+  .somos-fundadoras-info {
+    display: flex;
+    flex-direction: row;
+    max-width: 1200px;
+  }
+
+  .somos-fundadoras-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      transparent 20%,
+      var(--color-yellow) 100%
+    );
+  }
+
+  .somos-fundadoras-overlay:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      transparent 20%,
+      var(--color-yellow) 70%
+    );
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+
+  .somos-fundadoras-text p {
+    font-size: 1.1rem;
+    opacity: 0;
+    height: 0px;
+    transition: 0.7s ease all;
+  }
+
+  .somos-fundadoras-item:hover .somos-fundadoras-overlay:before {
+    opacity: 1;
+  }
+
+  .somos-fundadoras-item:nth-child(1):hover .somos-fundadoras-text p {
+    opacity: 1;
+    height: calc(200px - 3vw);
+  }
+
+  .somos-fundadoras-item:nth-child(2):hover .somos-fundadoras-text p {
+    opacity: 1;
+    height: calc(250px - 3vw);
+  }
+
+  .somos-fundadoras-text h3 {
+    font-size: 2.4rem;
+  }
+
+  .somos-fundadoras-item {
+    position: relative;
+    flex-basis: 50%;
+  }
+
+  /* Contact */
+  .contact-info h3 {
+    font-size: 2rem;
+  }
+
+  .contact-info span {
+    font-size: 1.5rem;
+  }
+
   /* <Footer /> */
   .footer {
     position: relative;
+  }
+
+  .footer-grid {
+    flex-direction: row;
+    justify-content: space-around;
   }
 }

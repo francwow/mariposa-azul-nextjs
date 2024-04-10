@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import { useNav } from "../contexts/ContextHooks";
 import Languages from "./Languages";
 import NavExtraItem from "./NavExtraItem";
@@ -7,6 +8,14 @@ import NavItem from "./NavItem";
 
 const MainNav = () => {
   const { navActive } = useNav();
+
+  useEffect(() => {
+    if (navActive) {
+      window.document.documentElement.style.overflowY = "hidden";
+    } else {
+      window.document.documentElement.style.overflowY = "scroll";
+    }
+  }, [navActive]);
 
   const navExtraItems1 = [
     { textES: "Próximos", textEN: "Upcoming", href: "/" },
@@ -33,7 +42,7 @@ const MainNav = () => {
         <ul className="nav-items">
           <NavItem
             delay="0.1s"
-            href="#somos"
+            href="/somos"
             textES="Somos"
             textEN="About Us"
             extra={false}
@@ -58,7 +67,7 @@ const MainNav = () => {
           />
           <NavItem
             delay="0.4s"
-            href="#contacto"
+            href="/contacto"
             textES="Contacto"
             textEN="Contact"
             extra={false}
