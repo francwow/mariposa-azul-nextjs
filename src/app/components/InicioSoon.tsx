@@ -13,14 +13,14 @@ const InicioSoon = () => {
   });
 
   return (
-    <section className="inicio-soon">
+    <section className="inicio-soon content-section">
       <Flowers number={2} />
       <h2
         style={{ opacity: "0" }}
         ref={itemRef}
         className={itemInView ? "fade-up" : ""}
       >
-        {language === "ES" ? "Próximos Retiros" : "Upcoming Retreats"}
+        {language === "ES" ? "Retiros y Talleres" : "Retreats and Workshops"}
       </h2>
       <div className="soon-items">
         <InfoCard

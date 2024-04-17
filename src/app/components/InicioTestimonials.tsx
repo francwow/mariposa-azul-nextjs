@@ -13,7 +13,7 @@ const InicioTestimonials = () => {
   });
 
   return (
-    <section className="inicio-testimonials">
+    <section className="inicio-testimonials content-section">
       <h2
         style={{ opacity: "0" }}
         ref={itemRef}

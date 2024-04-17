@@ -90,10 +90,30 @@ h2 {
   line-height: normal;
 }
 
-section:not(.inicio-carousel, .somos-hero-section) {
+h3 {
+  font-family: var(--font-inter);
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  line-height: normal;
+}
+
+section:not(.inicio-carousel, .hero-section, .contact-section) {
   position: relative;
   padding: 4rem 1rem;
   overflow: hidden;
+}
+
+.content-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-light);
+}
+
+.info {
+  width: 100%;
 }
 
 .main-container {
@@ -570,8 +590,13 @@ section:not(.inicio-carousel, .somos-hero-section) {
 }
 
 .inicio-carousel {
+  --translateY-px: calc(var(--translateY) * 1px);
   position: relative;
   height: 60vh;
+  opacity: calc(1 - var(--translateY) / 500);
+  transform: scale(calc(1 + var(--translateY) / 5000))
+    translateY(calc(0px + var(--translateY-px) / 10));
+  transition: 0s ease-in transform;
 }
 
 .inicio-carousel .carousel {
@@ -610,7 +635,6 @@ section:not(.inicio-carousel, .somos-hero-section) {
 
 /* InicioSoon */
 .inicio-soon {
-  background-color: var(--color-light);
   color: var(--color-dark);
 }
 
@@ -707,10 +731,6 @@ section:not(.inicio-carousel, .somos-hero-section) {
 }
 
 /* InicioTherapies */
-.inicio-therapies {
-  background-color: var(--color-light);
-}
-
 .inicio-therapies:after {
   content: "";
   position: absolute;
@@ -755,10 +775,6 @@ section:not(.inicio-carousel, .somos-hero-section) {
 }
 
 /* InicioTestimonials */
-.inicio-testimonials {
-  background-color: var(--color-light);
-}
-
 .inicio-testimonials h2 {
   text-align: center;
 }
@@ -910,58 +926,59 @@ section:not(.inicio-carousel, .somos-hero-section) {
 }
 
 /* SomosHero */
-.somos-hero-section {
+.hero-section {
   width: 100%;
   height: 60vh;
   position: relative;
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
-  padding: 10vw;
+  padding: 7vw;
 }
 
-.somos-overlay {
+.hero-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(180deg, #132b6be4 5%, transparent);
   z-index: 99;
 }
 
-.somos-hero-img {
+.hero-img {
+  --translateY-px: calc(var(--translateY) * 1px);
+  opacity: calc(1 - var(--translateY) / 500);
+  transform: scale(calc(1 + var(--translateY) / 5000))
+    translateY(calc(0px + var(--translateY-px) / 10));
+  transition: 0s ease-in transform;
   position: absolute;
   inset: 0;
 }
 
-.somos-hero-img img {
+.hero-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.somos-hero-heading {
+.hero-heading {
   z-index: 99;
   font-family: var(--font-montserrat);
 }
 
-.somos-hero-heading h1 {
+.hero-heading h1 {
   font-size: 2.2rem;
   line-height: normal;
   font-weight: 300;
   color: white;
 }
 
-.somos-hero-heading h2 {
+.hero-heading h2 {
   line-height: normal;
   color: white;
+  margin-bottom: 0;
 }
 
 /* SomosInfo */
 .somos-info-section {
-  background-color: var(--color-light);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   gap: 3rem;
 }
 
@@ -976,22 +993,22 @@ section:not(.inicio-carousel, .somos-hero-section) {
   margin: auto;
 }
 
-.somos-info-heading {
+.info-heading {
   position: relative;
 }
 
-.somos-info-heading:first-child h2 {
+.info-heading:first-child h2 {
   text-align: center;
   color: var(--color-dark);
 }
 
-.somos-info p {
+.info p {
   font-family: var(--inter);
   color: var(--color-dark);
   text-align: justify;
 }
 
-.somos-info-video {
+.info-video {
   flex-basis: 50%;
   width: 100%;
   max-width: 700px;
@@ -1002,7 +1019,7 @@ section:not(.inicio-carousel, .somos-hero-section) {
   overflow: hidden;
 }
 
-.somos-info-text {
+.info-text {
   flex-basis: 50%;
   max-width: 720px;
   display: flex;
@@ -1015,11 +1032,6 @@ section:not(.inicio-carousel, .somos-hero-section) {
 /* SomosFundadoras */
 .somos-fundadoras-section {
   width: 100vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--color-light);
 }
 
 .somos-fundadoras-section .flower-0 {
@@ -1117,12 +1129,157 @@ section:not(.inicio-carousel, .somos-hero-section) {
   font-family: var(--inter);
 }
 
+/* Retiros */
+.hero-section {
+  width: 100%;
+  height: 60vh;
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding: 7vw;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #132b6be4 5%, transparent);
+  z-index: 99;
+}
+
+.hero-img {
+  --translateY-px: calc(var(--translateY) * 1px);
+  opacity: calc(1 - var(--translateY) / 500);
+  transform: scale(calc(1 + var(--translateY) / 5000))
+    translateY(calc(0px + var(--translateY-px) / 10));
+  transition: 0s ease-in transform;
+  position: absolute;
+  inset: 0;
+}
+
+.hero-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-heading {
+  z-index: 99;
+  font-family: var(--font-montserrat);
+  position: relative;
+}
+
+.retiros .hero-heading h1 {
+  font-size: 2.2rem;
+  line-height: normal;
+  font-weight: 700;
+  color: white;
+}
+
+.hero-heading h2 {
+  line-height: normal;
+  color: white;
+  margin-bottom: 0;
+}
+
+.retiros .info-wrapper {
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+.retiros .info-container {
+  width: 100%;
+}
+
+.retiros .info-item {
+  font-family: var(--inter);
+  color: var(--color-dark);
+  text-align: justify;
+}
+
+/* Terapias */
+.hero-section {
+  width: 100%;
+  height: 60vh;
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding: 7vw;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #132b6be4 5%, transparent);
+  z-index: 99;
+}
+
+.hero-img {
+  --translateY-px: calc(var(--translateY) * 1px);
+  opacity: calc(1 - var(--translateY) / 500);
+  transform: scale(calc(1 + var(--translateY) / 5000))
+    translateY(calc(0px + var(--translateY-px) / 10));
+  transition: 0s ease-in transform;
+  position: absolute;
+  inset: 0;
+}
+
+.hero-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-heading {
+  z-index: 99;
+  font-family: var(--font-montserrat);
+  position: relative;
+}
+
+.terapias .hero-heading h1 {
+  font-size: 2.2rem;
+  line-height: normal;
+  font-weight: 700;
+  color: white;
+}
+
+.hero-heading h2 {
+  line-height: normal;
+  color: white;
+  margin-bottom: 0;
+}
+
+.terapias .info-wrapper {
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+.terapias .info-container {
+  width: 100%;
+}
+
+.terapias .info-item {
+  font-family: var(--inter);
+  color: var(--color-dark);
+  text-align: justify;
+}
+
 /* Contact */
 .contact-section {
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
+  padding: 4rem 1rem;
 }
 
 .contact-bg-img {
@@ -1148,7 +1305,6 @@ section:not(.inicio-carousel, .somos-hero-section) {
   z-index: 99;
   color: white;
   max-width: 720px;
-  margin-top: 3rem;
 }
 
 .contact-info-text {
@@ -1214,7 +1370,12 @@ section:not(.inicio-carousel, .somos-hero-section) {
     margin-bottom: 2rem;
   }
 
-  section:not(.inicio-carousel, .somos-hero-section) {
+  h3 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+
+  section:not(.inicio-carousel, .hero-section, .contact-section) {
     position: relative;
     padding: 6rem 3rem;
   }
@@ -1242,6 +1403,11 @@ section:not(.inicio-carousel, .somos-hero-section) {
     position: fixed;
     bottom: 40px;
     left: 40px;
+    visibility: hidden;
+  }
+
+  .scroll-up-btn.active {
+    visibility: visible;
   }
 
   .scroll-up-btn .symbol {
@@ -1412,26 +1578,16 @@ section:not(.inicio-carousel, .somos-hero-section) {
     font-weight: 600;
     font-size: 1.3rem;
   }
-
-  .inicio-testimonials .arrow {
-  }
-
   .arrow .symbol {
     font-size: 3rem;
   }
 
-  .inicio-testimonials .arrow:first-child {
-  }
-
-  .inicio-testimonials .arrow:nth-child(2) {
-  }
-
   /* SomosHero */
-  .somos-hero-section {
-    padding: 5vw;
+  .hero-section {
+    padding: 2vw;
   }
 
-  .somos-hero-heading h1 {
+  .hero-heading h1 {
     font-size: 3rem;
   }
 
@@ -1440,7 +1596,7 @@ section:not(.inicio-carousel, .somos-hero-section) {
     gap: 5rem;
   }
 
-  .somos-info-video {
+  .info-video {
     display: flex;
     flex-direction: row-reverse;
     justify-content: center;
@@ -1448,15 +1604,15 @@ section:not(.inicio-carousel, .somos-hero-section) {
     max-width: 1200px;
   }
 
-  .somos-info .main-btn-container {
+  .info .main-btn-container {
     width: fit-content;
   }
 
-  .somos-info-text {
+  .info-text {
     max-width: 1200px;
   }
 
-  .somos-info p {
+  .info p {
     font-size: 1.2rem;
   }
 
@@ -1520,7 +1676,39 @@ section:not(.inicio-carousel, .somos-hero-section) {
     flex-basis: 50%;
   }
 
+  /* Retiros */
+  .retiros .hero-heading h1 {
+    font-size: 3rem;
+  }
+
+  .retiros .info-wrapper {
+    max-width: 1200px;
+    gap: 5rem;
+  }
+
+  .retiros .info-item {
+    font-size: 1.2rem;
+  }
+
+  /* Terapias */
+  .terapias .hero-heading h1 {
+    font-size: 3rem;
+  }
+
+  .terapias .info-wrapper {
+    max-width: 1200px;
+    gap: 5rem;
+  }
+
+  .terapias .info-item {
+    font-size: 1.2rem;
+  }
+
   /* Contact */
+  .contact-section {
+    padding: 7rem 3rem;
+  }
+
   .contact-info h3 {
     font-size: 2rem;
   }

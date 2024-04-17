@@ -18,19 +18,55 @@ const MainNav = () => {
   }, [navActive]);
 
   const navExtraItems1 = [
-    { textES: "Próximos", textEN: "Upcoming", href: "/" },
-    { textES: "Memorias", textEN: "Memories", href: "/" },
+    { textES: "Crisálida", textEN: "Chrysalis", href: "/retiros/crisalida" },
+    {
+      textES: "Tambor Ceremonial",
+      textEN: "Ceremonial Drum",
+      href: "/retiros/tambor-ceremonial",
+    },
+    {
+      textES: "Ser Libre",
+      textEN: "Be Free",
+      href: "/retiros/ser-libre",
+    },
+    {
+      textES: "Tejiendo en La Naturaleza",
+      textEN: "Weaving in Nature",
+      href: "/retiros/tejido",
+    },
+    {
+      textES: "Terapia de Renacimiento",
+      textEN: "Rebirth Therapy",
+      href: "/retiros/renacimiento",
+    },
+    {
+      textES: "Desarrollando tu Alquimia Interior",
+      textEN: "Developing your Inner Alchemy",
+      href: "/retiros/alquimia",
+    },
   ];
 
   const navExtraItems2 = [
     {
       textES: "Constelaciones Familiares",
       textEN: "Family Constellations",
-      href: "/",
+      href: "/terapias/constelaciones",
     },
-    { textES: "Biodescodificación", textEN: "Biodecoding", href: "/" },
-    { textES: "Arte de la escucha", textEN: "Art of listening", href: "/" },
-    { textES: "Terapia de duelo", textEN: "Grief therapy", href: "/" },
+    {
+      textES: "Biodescodificación",
+      textEN: "Biodecoding",
+      href: "/terapias/biodescodificacion",
+    },
+    {
+      textES: "Arte de la escucha",
+      textEN: "Art of listening",
+      href: "/terapias/arte-escucha",
+    },
+    {
+      textES: "Terapia de duelo",
+      textEN: "Grief therapy",
+      href: "/terapias/terapia-duelo",
+    },
   ];
 
   return (
@@ -50,8 +86,8 @@ const MainNav = () => {
           <NavItem
             delay="0.2s"
             href="#retiros"
-            textES="Retiros"
-            textEN="Retreats"
+            textES="Retiros y Talleres"
+            textEN="Retreats and Workshops"
             extra={true}
             navName="retiros"
             navExtraItems={navExtraItems1}

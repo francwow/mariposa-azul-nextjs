@@ -13,7 +13,7 @@ const SomosFundadoras = () => {
   });
 
   return (
-    <section className="somos-fundadoras-section">
+    <section className="somos-fundadoras-section content-section">
       <div
         ref={itemRef}
         style={{ opacity: "0" }}

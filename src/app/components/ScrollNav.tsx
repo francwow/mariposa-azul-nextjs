@@ -28,17 +28,13 @@ const ScrollNav = () => {
   //   console.log(scrollDirection);
   // }, [scrollDirection]);
 
-  if (scrolled) {
-    return (
-      <aside className="scroll-up-btn">
-        <Link href="#">
-          <Icon icon="stat_1" />
-        </Link>
-      </aside>
-    );
-  } else {
-    return null;
-  }
+  return (
+    <aside className={scrolled ? "scroll-up-btn active" : "scroll-up-btn"}>
+      <Link href="#">
+        <Icon icon="stat_1" />
+      </Link>
+    </aside>
+  );
 };
 
 export default ScrollNav;

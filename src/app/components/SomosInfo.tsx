@@ -16,13 +16,11 @@ const SomosInfo = () => {
   });
 
   return (
-    <section className="somos-info-section">
-      <div ref={itemRef1} className="somos-info-video">
+    <section className="somos-info-section content-section">
+      <div ref={itemRef1} className="info-video">
         <div
           style={{ opacity: "0" }}
-          className={
-            itemInView1 ? "somos-info-heading fade-up" : "somos-info-heading"
-          }
+          className={itemInView1 ? "info-heading fade-up" : "info-heading"}
         >
           <h2>
             {language === "ES"
@@ -48,19 +46,17 @@ const SomosInfo = () => {
           </video>
         </div>
       </div>
-      <div ref={itemRef2} className="somos-info-text">
+      <div ref={itemRef2} className="info-text">
         <div
           style={{ opacity: "0" }}
-          className={
-            itemInView2 ? "somos-info-heading fade-up" : "somos-info-heading"
-          }
+          className={itemInView2 ? "info-heading fade-up" : "info-heading"}
         >
           <h2>{language === "ES" ? "Sobre Mariposa" : "About Mariposa"}</h2>
         </div>
         {language === "ES" ? (
           <div
             style={{ opacity: "0" }}
-            className={itemInView2 ? "somos-info fade-up" : "somos-info"}
+            className={itemInView2 ? "info fade-up" : "info"}
           >
             <p>
               Mariposa Azul se gesta con la intención de crear retiros de
@@ -90,7 +86,7 @@ const SomosInfo = () => {
         ) : (
           <div
             style={{ opacity: "0" }}
-            className={itemInView2 ? "somos-info fade-up" : "somos-info"}
+            className={itemInView2 ? "info fade-up" : "info"}
           >
             <p>
               Mariposa Azul was created with the intention of creating wellness

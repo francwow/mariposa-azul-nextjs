@@ -4,14 +4,39 @@
 import Image from "next/image";
 import { useLanguage } from "../contexts/ContextHooks";
 import img from "../../../public/inicio/inicio3.webp";
+import { useEffect, useState, useRef } from "react";
 
 const SomosHero = () => {
   const { language } = useLanguage();
+  const [translateY, setTranslateY] = useState(0);
+  const Ref = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const translate = () => {
+      let scrollY = window.scrollY;
+      setTranslateY(scrollY);
+    };
+
+    window.addEventListener("scroll", translate);
+
+    return () => {
+      window.removeEventListener("scroll", translate);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (Ref.current !== null) {
+      Ref.current.style.setProperty("--translateY", `${translateY}`);
+    }
+  }, [translateY]);
 
   return (
-    <section className="somos-hero-section">
-      <div className="somos-overlay"></div>
-      <div className="somos-hero-heading">
+    <section className="hero-section">
+      <div className="hero-overlay"></div>
+      <div
+        style={{ transform: `translate3d(0, ${1 - translateY / 10}px, 0)` }}
+        className="hero-heading"
+      >
         <h1>
           {language === "ES"
             ? "Experiencias de bienestar"
@@ -19,7 +44,7 @@ const SomosHero = () => {
         </h1>
         <h2>{language === "ES" ? "en la naturaleza" : "in nature"}</h2>
       </div>
-      <div className="somos-hero-img">
+      <div ref={Ref} className="hero-img">
         <Image
           src={img}
           alt="Imagen de un río en La Vega, Colombia"

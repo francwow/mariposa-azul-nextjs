@@ -12,7 +12,7 @@ const InicioTherapies = () => {
   });
 
   return (
-    <section className="inicio-therapies">
+    <section className="inicio-therapies content-section">
       <h2
         style={{ opacity: "0" }}
         ref={itemRef}
