@@ -1230,11 +1230,7 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
 .retiros-tematico-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom,
-    transparent 5%,
-    var(--color-yellow) 100%
-  );
+  background: linear-gradient(to bottom, transparent 5%, rgba(29, 29, 27) 100%);
 }
 
 .retiros-info-tematico .info-text {
@@ -1253,13 +1249,20 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
   text-align: center;
 }
 
+.retiros-info-tematico h2 {
+  color: white;
+  text-align: center;
+}
+
 .retiros-info-tematico .info-item {
   color: white;
+  text-align: start;
   position: relative;
   display: list-item;
   font-size: 1rem;
   font-weight: 500;
   padding: 5px 0;
+  font-size: 1.5rem;
 }
 
 .retiros-cta {
@@ -1363,7 +1366,7 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  padding: 4rem 1rem;
+  padding: 5rem 1rem;
 }
 
 .contact-bg-img {
@@ -1394,6 +1397,10 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
 .contact-info-text {
   position: relative;
   margin-bottom: 1rem;
+}
+
+.contact-info-text h2 {
+  text-align: start;
 }
 
 .contact-info h3 {
@@ -1790,7 +1797,7 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
 
   /* Contact */
   .contact-section {
-    padding: 7rem 3rem;
+    padding: 9rem 3rem;
   }
 
   .contact-info h3 {
