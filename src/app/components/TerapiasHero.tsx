@@ -1,4 +1,4 @@
-import { useLanguage } from "../contexts/ContextHooks";
+// import { useLanguage } from "../contexts/ContextHooks";
 import Image from "next/image";
 import { useEffect, useState, useRef } from "react";
 import { TerapiasItems } from "../data/TerapiasItems";
@@ -8,7 +8,7 @@ type TerapiasHeroProps = {
 };
 
 const TerapiasHero = ({ id }: TerapiasHeroProps) => {
-  const { language } = useLanguage();
+  // const { language } = useLanguage();
   const [translateY, setTranslateY] = useState(0);
   const Ref = useRef<HTMLDivElement | null>(null);
 
@@ -37,14 +37,14 @@ const TerapiasHero = ({ id }: TerapiasHeroProps) => {
         return id === item.id ? (
           <div key={index}>
             <div className="hero-overlay"></div>
-            <div
+            {/* <div
               style={{
                 transform: `translate3d(0, ${1 - translateY / 10}px, 0)`,
               }}
               className="hero-heading"
             >
               <h1>{language === "ES" ? item.textES : item.textEN}</h1>
-            </div>
+            </div> */}
             <div ref={Ref} className="hero-img">
               <Image
                 src={item.heroImg}

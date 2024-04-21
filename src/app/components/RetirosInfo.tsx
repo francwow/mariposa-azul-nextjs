@@ -1,8 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import { useLanguage } from "../contexts/ContextHooks";
 import { RetirosItems } from "../data/RetirosItems";
+import MainBtn from "./MainBtn";
 
 type RetirosInfoProps = {
   id: string;
@@ -16,43 +16,49 @@ const RetirosInfo = ({ id }: RetirosInfoProps) => {
       {RetirosItems.map((item, i) => {
         return id === item.id ? (
           <div className="info-wrapper" key={i}>
-            <div className="info">
-              <p>{language === "ES" ? item.contDescES : item.contDescEN}</p>
+            <div className="info-container">
+              <div className="info">
+                <h2>{language === "ES" ? item.textES : item.textEN}</h2>
+                <p>{language === "ES" ? item.contDescES : item.contDescEN}</p>
+              </div>
             </div>
             <div className="info-container">
-              <div className="info-text">
-                <h2>
-                  {language === "ES"
-                    ? "Contenido Temático"
-                    : "Thematic Content"}
-                </h2>
-                <ul className="info-items">
-                  {language === "ES"
-                    ? item.contTemES.map((contItem, j) => {
-                        return (
-                          <li className="info-item" key={j}>
-                            {contItem}
-                          </li>
-                        );
-                      })
-                    : item.contTemEN.map((contItem, j) => {
-                        return (
-                          <li className="info-item" key={j}>
-                            {contItem}
-                          </li>
-                        );
-                      })}
-                </ul>
-              </div>
-              <div className="info-img">
-                <Image
-                  src={item.infoImg}
-                  alt="Imagen de retiro de La Mariposa Azul"
-                  width={700}
-                  height={700}
-                  priority
-                  placeholder="blur"
-                />
+              <div
+                style={{
+                  background: `url("${item.infoImg.src}")`,
+                  backgroundAttachment: "fixed",
+                  backgroundPosition: "center",
+                  backgroundSize: "cover",
+                }}
+                className="retiros-info-tematico"
+              >
+                <div className="retiros-tematico-overlay"></div>
+                <div className="info-heading">
+                  <h2>
+                    {language === "ES"
+                      ? "Contenido Temático"
+                      : "Thematic Content"}
+                  </h2>
+                </div>
+                <div className="info-text">
+                  <ul className="info-items">
+                    {language === "ES"
+                      ? item.contTemES.map((contItem, j) => {
+                          return (
+                            <li className="info-item" key={j}>
+                              {contItem}
+                            </li>
+                          );
+                        })
+                      : item.contTemEN.map((contItem, j) => {
+                          return (
+                            <li className="info-item" key={j}>
+                              {contItem}
+                            </li>
+                          );
+                        })}
+                  </ul>
+                </div>
               </div>
             </div>
             <div className="info-container">
@@ -76,6 +82,18 @@ const RetirosInfo = ({ id }: RetirosInfoProps) => {
                     );
                   })}
                 </div>
+              </div>
+            </div>
+            <div className="retiros-cta info">
+              <div className="info-cta">
+                <p>
+                  {language === "ES"
+                    ? `Inversión: ${item.priceES}`
+                    : `Investment: ${item.priceEN}`}
+                </p>
+                <MainBtn href={item.ctaHref} bgColor="white" target>
+                  {language === "ES" ? "inscríbete ahora" : "sign up now"}
+                </MainBtn>
               </div>
             </div>
           </div>

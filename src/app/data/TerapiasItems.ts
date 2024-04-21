@@ -18,7 +18,7 @@ export const TerapiasItems = [
   },
   {
     textES: "Constelaciones Familiares",
-    textEN: "The Art of Listening",
+    textEN: "Family Constellations",
     heroImg: img2,
     descTextES: `Las Constelaciones Familiares son una herramienta terapéutica orientada a identificar el tipo de relaciones que se establecen entre los diferentes miembros del sistema familiar.
     El objetivo principal es que la persona pueda identificar las dinámicas perjudiciales inconscientes que se han establecido en su familia y las actitudes y conductas que se han generado entre sus miembros, lo que le permite a la persona reinterpretar los patrones familiares disfuncionales que reproduce de forma inconsciente, para encontrar soluciones a los conflictos y emociones latentes y que pueda gestionarlas y reconciliarse con ciertas personas y eventos del pasado.`,

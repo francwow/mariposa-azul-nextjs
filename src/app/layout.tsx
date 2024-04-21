@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import Provider from "./components/Provider";
 import Whatsapp from "./components/Whatsapp";
 import ScrollNav from "./components/ScrollNav";
+// import { PreloadResources } from "./components/PreloadResources";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const montserrat = Montserrat({
@@ -70,6 +71,7 @@ export default function RootLayout({
 }>) {
   return (
     <html className={`${materialSymbols.variable}`} lang="en">
+      {/* <PreloadResources /> */}
       <Provider>
         <body
           className={`${inter.variable} ${montserrat.variable} ${yeseva.variable} ${hortensia.variable} ${glacial.variable}`}

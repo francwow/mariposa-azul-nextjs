@@ -6,10 +6,10 @@ import img5 from "../../../public/retiros/memorias/renacimiento/renacimiento1.we
 import img6 from "../../../public/retiros/memorias/alquimia/ser1.webp";
 import img7 from "../../../public/retiros/proximos/crisalida/crisalida2.webp";
 import img8 from "../../../public/retiros/proximos/tambor/tambor2.webp";
-import img9 from "../../../public/retiros/proximos/libre/libre2.webp";
+import img9 from "../../../public/retiros/proximos/libre/libre3.webp";
 import img10 from "../../../public/retiros/memorias/tejido/tejido2.webp";
-import img11 from "../../../public/retiros/memorias/renacimiento/renacimiento2.webp";
-import img12 from "../../../public/retiros/memorias/alquimia/ser2.webp";
+import img11 from "../../../public/retiros/memorias/renacimiento/renacimiento3.webp";
+import img12 from "../../../public/retiros/memorias/alquimia/ser5.webp";
 
 export const RetirosItems = [
   {
@@ -64,6 +64,9 @@ export const RetirosItems = [
         textEN: `Transpersonal Psychotherapist, graduated in Naturism, Bioneuroemotion and Family Constellations. She accompanies processes where people need to be listened to and guided to another perspective on their lives.`,
       },
     ],
+    priceES: "$800.000 COP",
+    priceEN: "$800.000 COP",
+    ctaHref: "https://forms.gle/mY3q29G9iXahb84F9",
   },
   {
     textES: "Tambor Ceremonial",
@@ -100,6 +103,9 @@ export const RetirosItems = [
         textEN: `Industrial and graphic designer, drum maker, (Drum Maker) international workshop leader, Walker for more than twenty years of the different native traditions of America. He learned the construction of these drums in his first drum workshop in Canada in 2001 and later received the knowledge from grandfather Alfonso Castillo, a walker of the “Sioux-Lakota” tradition. Today, like his teachers, and applying his academic knowledge and experience, he shares with all of us this tradition taught from generation to generation. Since 2015 he has been providing psychosocial support in communities that survived the internal armed conflict in Colombia as a workshop leader, and with the elaboration of the drum, and a ritual and therapeutic methodology created to bring emotional relief, empowerment, resistance and memory from non-violence, recognizing the inner warrior in each of us.`,
       },
     ],
+    priceES: "$650.000 COP Camping / $800.000 COP Habitación compartida",
+    priceEN: "$650.000 COP Camping / $800.000 COP Shared room",
+    ctaHref: "https://forms.gle/ZbKT5TH5hxCV5gY47",
   },
   {
     textES: "Ser Libre",
@@ -135,6 +141,9 @@ export const RetirosItems = [
         What are you keeping that doesn't let you live in peace? It's time to root it out!`,
       },
     ],
+    priceES: "$550.000 COP Camping / $650.000 COP Habitación compartida",
+    priceEN: "$550.000 COP Camping / $650.000 COP Shared room",
+    ctaHref: "https://forms.gle/5NViysDPazqffhu49",
   },
   {
     textES: "Tejiendo en La Naturaleza",
@@ -164,6 +173,9 @@ export const RetirosItems = [
         textEN: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
       },
     ],
+    priceES: "Lorem ipsum",
+    priceEN: "Lorem ipsum",
+    ctaHref: "#",
   },
   {
     textES: "Terapia de Renacimiento",
@@ -196,6 +208,9 @@ export const RetirosItems = [
         textEN: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
       },
     ],
+    priceES: "Lorem ipsum",
+    priceEN: "Lorem ipsum",
+    ctaHref: "#",
   },
   {
     textES: "Desarrollando tu Alquimia Interior",
@@ -225,5 +240,8 @@ export const RetirosItems = [
         textEN: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
       },
     ],
+    priceES: "Lorem ipsum",
+    priceEN: "Lorem ipsum",
+    ctaHref: "#",
   },
 ];

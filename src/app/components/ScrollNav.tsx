@@ -3,9 +3,11 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Icon from "./GoogleIcon";
+import { useNav } from "../contexts/ContextHooks";
 
 const ScrollNav = () => {
   const [scrolled, setScrolled] = useState(false);
+  const { navActive } = useNav();
 
   useEffect(() => {
     function scrollTop() {
@@ -28,13 +30,13 @@ const ScrollNav = () => {
   //   console.log(scrollDirection);
   // }, [scrollDirection]);
 
-  return (
+  return !navActive ? (
     <aside className={scrolled ? "scroll-up-btn active" : "scroll-up-btn"}>
       <Link href="#">
         <Icon icon="stat_1" />
       </Link>
     </aside>
-  );
+  ) : null;
 };
 
 export default ScrollNav;

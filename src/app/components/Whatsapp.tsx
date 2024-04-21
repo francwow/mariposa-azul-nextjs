@@ -2,9 +2,12 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { useNav } from "../contexts/ContextHooks";
 
 const Whatsapp = () => {
-  return (
+  const { navActive } = useNav();
+
+  return !navActive ? (
     <aside className="whatsapp">
       <Link
         target="_blank"
@@ -21,7 +24,7 @@ const Whatsapp = () => {
         />
       </Link>
     </aside>
-  );
+  ) : null;
 };
 
 export default Whatsapp;
