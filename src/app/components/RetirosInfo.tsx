@@ -2,6 +2,7 @@
 
 import { useLanguage } from "../contexts/ContextHooks";
 import { RetirosItems } from "../data/RetirosItems";
+import Flowers from "./Flowers";
 import MainBtn from "./MainBtn";
 
 type RetirosInfoProps = {
@@ -62,6 +63,7 @@ const RetirosInfo = ({ id }: RetirosInfoProps) => {
               </div>
             </div>
             <div className="info-container">
+              <Flowers number={2} />
               <div className="info-text">
                 <div className="info-heading">
                   <h2>

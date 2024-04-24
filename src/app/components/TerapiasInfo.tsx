@@ -2,6 +2,8 @@
 
 import { useLanguage } from "../contexts/ContextHooks";
 import { TerapiasItems } from "../data/TerapiasItems";
+import Flowers from "./Flowers";
+import InicioTestimonials from "./InicioTestimonials";
 import MainBtn from "./MainBtn";
 
 type TerapiasInfoProps = {
@@ -13,6 +15,7 @@ const TerapiasInfo = ({ id }: TerapiasInfoProps) => {
 
   return (
     <section className="terapias-info-section content-section">
+      <Flowers number={2} />
       {TerapiasItems.map((item, i) => {
         return id === item.id ? (
           <div className="info-wrapper" key={i}>
@@ -35,6 +38,7 @@ const TerapiasInfo = ({ id }: TerapiasInfoProps) => {
           </div>
         ) : null;
       })}
+      <InicioTestimonials />
     </section>
   );
 };

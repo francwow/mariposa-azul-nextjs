@@ -1,7 +1,6 @@
 "use client";
 
 import Footer from "@/app/components/Footer";
-import InicioTestimonials from "@/app/components/InicioTestimonials";
 import TerapiasHero from "@/app/components/TerapiasHero";
 import TerapiasInfo from "@/app/components/TerapiasInfo";
 import { TerapiasItems } from "@/app/data/TerapiasItems";
@@ -17,7 +16,6 @@ export default function Page({ params }: { params: { terapiasID: string } }) {
           </div>
         ) : null;
       })}
-      <InicioTestimonials />
       <Footer />
     </div>
   );

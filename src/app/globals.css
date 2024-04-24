@@ -117,6 +117,10 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
   width: 100%;
 }
 
+.info-container {
+  position: relative;
+}
+
 .main-container {
   position: relative;
   min-height: 100vh;
@@ -332,25 +336,25 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
 
 @keyframes flower {
   0% {
-    transform: scale(2) rotate(0deg);
+    transform: scale(1) rotate(0deg);
   }
   20% {
-    transform: scale(2.04) rotate(5deg);
+    transform: scale(1.04) rotate(5deg);
   }
   40% {
-    transform: scale(2) rotate(0deg);
+    transform: scale(1) rotate(0deg);
   }
   60% {
-    transform: scale(2.1) rotate(15deg);
+    transform: scale(1.1) rotate(15deg);
   }
   80% {
-    transform: scale(2) rotate(0deg);
+    transform: scale(1) rotate(0deg);
   }
   90% {
-    transform: scale(2.07) rotate(10deg);
+    transform: scale(1.07) rotate(10deg);
   }
   100% {
-    transform: scale(2) rotate(0deg);
+    transform: scale(1) rotate(0deg);
   }
 }
 
@@ -652,7 +656,7 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
 
 .inicio-soon .flower-0 {
   position: absolute;
-  transform: scale(2);
+  transform: scale(1);
   top: 0%;
   right: 10%;
   display: flex;
@@ -663,12 +667,14 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
 
 .inicio-soon .flower-1 {
   position: absolute;
-  transform: scale(2);
+  transform: scale(1);
   bottom: 20%;
   left: 10%;
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: flower 17s ease forwards infinite;
+  animation-delay: 0.5s;
 }
 
 .inicio-soon:after {
@@ -787,6 +793,10 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
 }
 
 /* InicioTestimonials */
+.inicio-testimonials {
+  position: relative;
+}
+
 .inicio-testimonials h2 {
   text-align: center;
 }
@@ -1048,7 +1058,7 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
 
 .somos-fundadoras-section .flower-0 {
   position: absolute;
-  transform: scale(2);
+  transform: scale(1);
   top: 0%;
   right: 10%;
   display: flex;
@@ -1059,12 +1069,14 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
 
 .somos-fundadoras-section .flower-1 {
   position: absolute;
-  transform: scale(2);
-  bottom: 20%;
+  transform: scale(1);
+  bottom: 10%;
   left: 10%;
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: flower 17s ease forwards infinite;
+  animation-delay: 0.5s;
 }
 
 .somos-fundadoras-info {
@@ -1188,6 +1200,29 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
   color: white;
 }
 
+.retiros .flower-0 {
+  position: absolute;
+  transform: scale(1);
+  top: 0%;
+  right: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: flower 20s ease forwards infinite;
+}
+
+.retiros .flower-1 {
+  position: absolute;
+  transform: scale(1);
+  bottom: 20%;
+  left: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: flower 17s ease forwards infinite;
+  animation-delay: 0.5s;
+}
+
 .hero-heading h2 {
   line-height: normal;
   color: white;
@@ -1225,6 +1260,7 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
   background-size: cover;
   background-attachment: fixed;
   padding: 1rem;
+  z-index: 99;
 }
 
 .retiros-tematico-overlay {
@@ -1358,6 +1394,33 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
   margin-bottom: 1rem;
   text-align: start;
   color: var(--color-blue);
+}
+
+.terapias .flower-0 {
+  position: absolute;
+  transform: scale(1);
+  top: 0%;
+  right: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: flower 20s ease forwards infinite;
+}
+
+.terapias .flower-1 {
+  position: absolute;
+  transform: scale(1);
+  bottom: 20%;
+  left: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: flower 17s ease forwards infinite;
+  animation-delay: 0.5s;
+}
+
+.terapias .inicio-testimonials {
+  background-color: transparent;
 }
 
 /* Contact */
@@ -1505,6 +1568,31 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
     position: relative;
   }
 
+  /* Flowers */
+  @keyframes flower {
+    0% {
+      transform: scale(2) rotate(0deg);
+    }
+    20% {
+      transform: scale(2.04) rotate(5deg);
+    }
+    40% {
+      transform: scale(2) rotate(0deg);
+    }
+    60% {
+      transform: scale(2.1) rotate(15deg);
+    }
+    80% {
+      transform: scale(2) rotate(0deg);
+    }
+    90% {
+      transform: scale(2.07) rotate(10deg);
+    }
+    100% {
+      transform: scale(2) rotate(0deg);
+    }
+  }
+
   /* InfoCard */
   .info-card-name {
     font-size: 1.7rem;
@@ -1628,6 +1716,7 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
   }
 
   /* InicioSoon */
+
   .soon-items {
     flex-direction: row;
     align-items: flex-start;
@@ -1761,6 +1850,11 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
   .somos-fundadoras-item {
     position: relative;
     flex-basis: 50%;
+  }
+
+  .somos-fundadoras-section .flower-1 {
+    bottom: 20%;
+    left: 10%;
   }
 
   /* Retiros */
