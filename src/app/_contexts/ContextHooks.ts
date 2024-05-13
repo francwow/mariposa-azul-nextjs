@@ -5,7 +5,7 @@ import {
   ExtraNavContextType,
   LanguageContextType,
   NavActiveContextType,
-} from "../types/Types";
+} from "../_types/Types";
 
 export const LanguageContext = createContext<LanguageContextType | null>(null);
 export const NavActiveContext = createContext<NavActiveContextType | null>(

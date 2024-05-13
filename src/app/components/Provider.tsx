@@ -5,8 +5,8 @@ import {
   ExtraNavContext,
   LanguageContext,
   NavActiveContext,
-} from "../contexts/ContextHooks";
-import { ExtraNavType, LanguageType, NavActiveType } from "../types/Types";
+} from "../_contexts/ContextHooks";
+import { ExtraNavType, LanguageType, NavActiveType } from "../_types/Types";
 
 const Provider = (props: PropsWithChildren) => {
   const [language, setLanguage] = useState<LanguageType>("ES");

@@ -2,7 +2,7 @@
 "use client";
 
 import Image from "next/image";
-import { useLanguage } from "../contexts/ContextHooks";
+import { useLanguage } from "../_contexts/ContextHooks";
 import img from "../../../public/inicio/inicio3.webp";
 import { useEffect, useState, useRef } from "react";
 

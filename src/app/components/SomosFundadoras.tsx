@@ -1,6 +1,6 @@
 "use client";
 
-import { useLanguage } from "../contexts/ContextHooks";
+import { useLanguage } from "../_contexts/ContextHooks";
 import Flowers from "./Flowers";
 import SomosFundadorasItem from "./SomosFundadorasItem";
 import { useInView } from "react-intersection-observer";

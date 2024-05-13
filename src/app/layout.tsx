@@ -23,17 +23,17 @@ const glacial = localFont({
   variable: "--font-glacial",
   src: [
     {
-      path: "../app/fonts/GlacialIndifference-Regular.otf",
+      path: "../app/_fonts/GlacialIndifference-Regular.otf",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../app/fonts/GlacialIndifference-Italic.otf",
+      path: "../app/_fonts/GlacialIndifference-Italic.otf",
       weight: "400",
       style: "italic",
     },
     {
-      path: "../app/fonts/GlacialIndifference-Bold.otf",
+      path: "../app/_fonts/GlacialIndifference-Bold.otf",
       weight: "700",
       style: "bold",
     },
@@ -43,7 +43,7 @@ const hortensia = localFont({
   variable: "--font-hortensia",
   src: [
     {
-      path: "../app/fonts/Hortensia-Regular.ttf",
+      path: "../app/_fonts/Hortensia-Regular.ttf",
       weight: "400",
       style: "normal",
     },

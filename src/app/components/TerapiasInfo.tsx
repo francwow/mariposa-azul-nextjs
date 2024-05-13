@@ -1,10 +1,11 @@
 "use client";
 
-import { useLanguage } from "../contexts/ContextHooks";
-import { TerapiasItems } from "../data/TerapiasItems";
+import Image from "next/image";
+import { useLanguage } from "../_contexts/ContextHooks";
+import { TerapiasItems } from "../_data/TerapiasItems";
 import Flowers from "./Flowers";
 import InicioTestimonials from "./InicioTestimonials";
-import MainBtn from "./MainBtn";
+import SpecialCTA from "./SpecialCTA";
 
 type TerapiasInfoProps = {
   id: string;
@@ -19,20 +20,21 @@ const TerapiasInfo = ({ id }: TerapiasInfoProps) => {
       {TerapiasItems.map((item, i) => {
         return id === item.id ? (
           <div className="info-wrapper" key={i}>
-            <div className="info">
-              <h2>{language === "ES" ? item.textES : item.textEN}</h2>
-              <p>{language === "ES" ? item.descTextES : item.descTextEN}</p>
-            </div>
-            <div className="info">
-              <div className="info-cta">
-                <p>
-                  {language === "ES"
-                    ? `Sesión virtual o precensial ${item.price} 1 hora`
-                    : `Virtual or in-person session ${item.price} 1 hour`}
-                </p>
-                <MainBtn href={item.ctaHref} bgColor="white" target>
-                  {language === "ES" ? "agenda tu cita aquí" : "schedule here"}
-                </MainBtn>
+            <div className="info terapias-desc">
+              {/* <h2>{language === "ES" ? item.textES : item.textEN}</h2> */}
+              <div className="info-text">
+                <p>{language === "ES" ? item.descTextES : item.descTextEN}</p>
+                <SpecialCTA item={item} />
+              </div>
+              <div className="info-img">
+                <Image
+                  src={item.infoImg}
+                  alt="Imagen de terapia de Mariposa Azul"
+                  width={800}
+                  height={800}
+                  priority
+                  placeholder="blur"
+                />
               </div>
             </div>
           </div>

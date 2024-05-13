@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import img from "../../../public/otros/otros20.webp";
-import { useLanguage } from "../contexts/ContextHooks";
+import { useLanguage } from "../_contexts/ContextHooks";
 import Link from "next/link";
 import Social from "./Social";
 

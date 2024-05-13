@@ -1,12 +1,20 @@
 "use client";
 
-import { useLanguage } from "../contexts/ContextHooks";
+import { useLanguage } from "../_contexts/ContextHooks";
 
-const Languages = () => {
+type LanguagesProps = {
+  mobile: boolean;
+};
+
+const Languages = ({ mobile }: LanguagesProps) => {
   const { language, setLanguage } = useLanguage();
 
   return (
-    <aside className="languages-container">
+    <aside
+      className={
+        mobile ? "languages-container mobile" : "languages-container desktop"
+      }
+    >
       <div
         className={
           language === "ES" ? "languages es-active" : "languages en-active"

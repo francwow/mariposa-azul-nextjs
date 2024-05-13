@@ -3,7 +3,7 @@
 import Footer from "@/app/components/Footer";
 import TerapiasHero from "@/app/components/TerapiasHero";
 import TerapiasInfo from "@/app/components/TerapiasInfo";
-import { TerapiasItems } from "@/app/data/TerapiasItems";
+import { TerapiasItems } from "@/app/_data/TerapiasItems";
 
 export default function Page({ params }: { params: { terapiasID: string } }) {
   return (

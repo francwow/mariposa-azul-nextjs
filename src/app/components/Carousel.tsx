@@ -1,6 +1,6 @@
 import Image, { StaticImageData } from "next/image";
 import MainBtn from "./MainBtn";
-import { useLanguage } from "../contexts/ContextHooks";
+import { useLanguage } from "../_contexts/ContextHooks";
 import Icon from "./GoogleIcon";
 import { useState } from "react";
 import { useInView } from "react-intersection-observer";

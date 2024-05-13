@@ -1,6 +1,7 @@
-import img1 from "../../../public/retiros/proximos/crisalida/crisalida1.webp";
-import img2 from "../../../public/retiros/proximos/tambor/tambor1.webp";
-import img3 from "../../../public/retiros/proximos/libre/libre1.webp";
+// heroImg & infoImg
+import img1 from "../../../public/retiros/proximos/crisalida/crisalida7.webp";
+import img2 from "../../../public/retiros/proximos/tambor/tambor7.webp";
+import img3 from "../../../public/retiros/proximos/libre/libre7.webp";
 import img4 from "../../../public/retiros/memorias/tejido/tejido1.webp";
 import img5 from "../../../public/retiros/memorias/renacimiento/renacimiento1.webp";
 import img6 from "../../../public/retiros/memorias/alquimia/ser1.webp";
@@ -10,8 +11,75 @@ import img9 from "../../../public/retiros/proximos/libre/libre3.webp";
 import img10 from "../../../public/retiros/memorias/tejido/tejido2.webp";
 import img11 from "../../../public/retiros/memorias/renacimiento/renacimiento3.webp";
 import img12 from "../../../public/retiros/memorias/alquimia/ser5.webp";
+import { StaticImageData } from "next/image";
 
-export const RetirosItems = [
+// alquimia
+import alquimia1 from "../../../public/retiros/memorias/alquimia/ser1.webp";
+import alquimia2 from "../../../public/retiros/memorias/alquimia/ser2.webp";
+import alquimia3 from "../../../public/retiros/memorias/alquimia/ser3.webp";
+import alquimia4 from "../../../public/retiros/memorias/alquimia/ser4.webp";
+import alquimia5 from "../../../public/retiros/memorias/alquimia/ser5.webp";
+import alquimia6 from "../../../public/retiros/memorias/alquimia/ser6.webp";
+
+// renacimiento
+import renacimiento1 from "../../../public/retiros/memorias/renacimiento/renacimiento1.webp";
+import renacimiento2 from "../../../public/retiros/memorias/renacimiento/renacimiento2.webp";
+import renacimiento3 from "../../../public/retiros/memorias/renacimiento/renacimiento3.webp";
+import renacimiento4 from "../../../public/retiros/memorias/renacimiento/renacimiento4.webp";
+import renacimiento5 from "../../../public/retiros/memorias/renacimiento/renacimiento5.webp";
+import renacimiento6 from "../../../public/retiros/memorias/renacimiento/renacimiento6.webp";
+
+// tejido
+import tejido1 from "../../../public/retiros/memorias/tejido/tejido1.webp";
+import tejido2 from "../../../public/retiros/memorias/tejido/tejido2.webp";
+import tejido3 from "../../../public/retiros/memorias/tejido/tejido3.webp";
+import tejido4 from "../../../public/retiros/memorias/tejido/tejido4.webp";
+import tejido5 from "../../../public/retiros/memorias/tejido/tejido5.webp";
+import tejido6 from "../../../public/retiros/memorias/tejido/tejido6.webp";
+
+// crisalida
+import crisalida1 from "../../../public/retiros/proximos/crisalida/crisalida1.webp";
+import crisalida2 from "../../../public/retiros/proximos/crisalida/crisalida2.webp";
+import crisalida3 from "../../../public/retiros/proximos/crisalida/crisalida3.webp";
+import crisalida4 from "../../../public/retiros/proximos/crisalida/crisalida4.webp";
+import crisalida5 from "../../../public/retiros/proximos/crisalida/crisalida5.webp";
+import crisalida6 from "../../../public/retiros/proximos/crisalida/crisalida6.webp";
+
+// libre
+import libre1 from "../../../public/retiros/proximos/libre/libre1.webp";
+import libre2 from "../../../public/retiros/proximos/libre/libre2.webp";
+import libre3 from "../../../public/retiros/proximos/libre/libre3.webp";
+import libre4 from "../../../public/retiros/proximos/libre/libre4.webp";
+import libre5 from "../../../public/retiros/proximos/libre/libre5.webp";
+import libre6 from "../../../public/retiros/proximos/libre/libre6.webp";
+
+// tambor
+import tambor1 from "../../../public/retiros/proximos/tambor/tambor1.webp";
+import tambor2 from "../../../public/retiros/proximos/tambor/tambor2.webp";
+import tambor3 from "../../../public/retiros/proximos/tambor/tambor3.webp";
+import tambor4 from "../../../public/retiros/proximos/tambor/tambor4.webp";
+import tambor5 from "../../../public/retiros/proximos/tambor/tambor5.webp";
+import tambor6 from "../../../public/retiros/proximos/tambor/tambor6.webp";
+
+export type RetirosItemType = {
+  textES: string;
+  textEN: string;
+  href: string;
+  heroImg: StaticImageData;
+  infoImg: StaticImageData;
+  contDescES: string;
+  contDescEN: string;
+  contTemES: string[];
+  contTemEN: string[];
+  facilitadores: { name: string; textES: string; textEN: string }[];
+  priceES: string;
+  priceEN: string;
+  ctaHref: string;
+  id: string;
+  collage: StaticImageData[];
+};
+
+export const RetirosItems: RetirosItemType[] = [
   {
     textES: "Crisálida",
     textEN: "Chrysalis",
@@ -24,17 +92,17 @@ export const RetirosItems = [
       "In this experiential Re-Birth retreat we offer you the opportunity to explore limiting beliefs, unfinished grief and pending issues in your life that prevent you from reaching your maximum potential. You will learn to identify them, manage them and make the decision to leave them behind to finally say a resounding YES to life and your own passion.",
     contTemES: [
       "Anclas Transgeneracionales - yacentes",
-      "Duelos no resueltos y ciclos de experiencia inconclusos.",
-      "Niveles de apego.",
-      "Experiencia de transcender a la muerte.",
-      "Regreso a la vida a través actos conscientes de siembra y liberación.",
+      "Duelos no resueltos y ciclos de experiencia inconclusos",
+      "Niveles de apego",
+      "Experiencia de transcender a la muerte",
+      "Regreso a la vida a través actos conscientes de siembra y liberación",
     ],
     contTemEN: [
       "Transgenerational Anchors - recumbent",
-      "Unresolved duels and unfinished cycles of experience.",
-      "Levels of attachment.",
-      "Experience of transcending death.",
-      "Return to life through conscious acts of sowing and liberation.",
+      "Unresolved duels and unfinished cycles of experience",
+      "Levels of attachment",
+      "Experience of transcending death",
+      "Return to life through conscious acts of sowing and liberation",
     ],
     facilitadores: [
       {
@@ -67,6 +135,14 @@ export const RetirosItems = [
     priceES: "$800.000 COP",
     priceEN: "$800.000 COP",
     ctaHref: "https://forms.gle/mY3q29G9iXahb84F9",
+    collage: [
+      crisalida1,
+      crisalida2,
+      crisalida3,
+      crisalida4,
+      crisalida5,
+      crisalida6,
+    ],
   },
   {
     textES: "Tambor Ceremonial",
@@ -85,16 +161,16 @@ export const RetirosItems = [
     The workshop will be a magical encounter in which EACH PARTICIPANT WILL BUILD THEIR OWN DRUM WITH THEIR HANDS, ENERGY AND PERSONAL PURPOSE. It will be a moment of introspection, concentration and meditation.
     Likewise, we will have a sound awareness space for you to learn to play your drum and enter states of deep meditation between the beat of your drum and the beat of your heart.`,
     contTemES: [
-      "Ritual de tejido tambor ceremonial.",
-      "Sensibilización sonora.",
-      "Círculo de saberes alrededor del fuego.",
-      "Baño de cascada y rio.",
+      "Ritual de tejido tambor ceremonial",
+      "Sensibilización sonora",
+      "Círculo de saberes alrededor del fuego",
+      "Baño de cascada y rio",
     ],
     contTemEN: [
-      "Ceremonial drum weaving ritual.",
-      "Sound awareness.",
-      "Circle of knowledge around the fire.",
-      "Waterfall and river bath.",
+      "Ceremonial drum weaving ritual",
+      "Sound awareness",
+      "Circle of knowledge around the fire",
+      "Waterfall and river bath",
     ],
     facilitadores: [
       {
@@ -106,6 +182,7 @@ export const RetirosItems = [
     priceES: "$650.000 COP Camping / $800.000 COP Habitación compartida",
     priceEN: "$650.000 COP Camping / $800.000 COP Shared room",
     ctaHref: "https://forms.gle/ZbKT5TH5hxCV5gY47",
+    collage: [tambor1, tambor2, tambor3, tambor4, tambor5, tambor6],
   },
   {
     textES: "Ser Libre",
@@ -119,16 +196,16 @@ export const RetirosItems = [
     contDescEN: `The "Be Free" retreat is a two-day, one-night experiential retreat designed to allow participants to connect deeply with their body, their senses and their emotions, through immersion in the natural world.
       Based on the methodology of alchemical liberation, this retreat combines various practices, such as constellations, conscious breathing and meditation, to facilitate the release of emotional blockages and promote authenticity and wholeness in everyday life.`,
     contTemES: [
-      "Constelación grupal enfocada en explorar y sanar patrones y dinámicas familiares, liberando bloqueos emocionales, promoviendo la integración y la reconciliación.",
-      "Inmersión en Hielo con entrenamiento mental y técnicas de respiración.",
-      "Reconexión con el cuerpo a través de prácticas corporales conscientes.",
-      "Exploración de los sentidos mediante ejercicios sensoriales en conexión con la naturaleza.",
+      "Constelación grupal enfocada en explorar y sanar patrones y dinámicas familiares, liberando bloqueos emocionales, promoviendo la integración y la reconciliación",
+      "Inmersión en Hielo con entrenamiento mental y técnicas de respiración",
+      "Reconexión con el cuerpo a través de prácticas corporales conscientes",
+      "Exploración de los sentidos mediante ejercicios sensoriales en conexión con la naturaleza",
     ],
     contTemEN: [
-      "Group constellation focused on exploring and healing family patterns and dynamics, releasing emotional blockages, promoting integration and reconciliation.",
-      "Ice immersion with mental training and breathing techniques.",
-      "Reconnection with the body through conscious body practices.",
-      "Exploration of the senses through sensory exercises in connection with nature.",
+      "Group constellation focused on exploring and healing family patterns and dynamics, releasing emotional blockages, promoting integration and reconciliation",
+      "Ice immersion with mental training and breathing techniques",
+      "Reconnection with the body through conscious body practices",
+      "Exploration of the senses through sensory exercises in connection with nature",
     ],
     facilitadores: [
       {
@@ -144,6 +221,7 @@ export const RetirosItems = [
     priceES: "$550.000 COP Camping / $650.000 COP Habitación compartida",
     priceEN: "$550.000 COP Camping / $650.000 COP Shared room",
     ctaHref: "https://forms.gle/5NViysDPazqffhu49",
+    collage: [libre1, libre2, libre3, libre4, libre5, libre6],
   },
   {
     textES: "Tejiendo en La Naturaleza",
@@ -157,14 +235,14 @@ export const RetirosItems = [
     contDescEN:
       "Learn the basic principles of macramé and crochet weaving techniques in a natural space next to a beautiful river. Give yourself a space for creation and inspiration in the middle of nature.",
     contTemES: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
     ],
     contTemEN: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
     ],
     facilitadores: [
       {
@@ -176,6 +254,7 @@ export const RetirosItems = [
     priceES: "Lorem ipsum",
     priceEN: "Lorem ipsum",
     ctaHref: "#",
+    collage: [tejido1, tejido2, tejido3, tejido4, tejido5, tejido6],
   },
   {
     textES: "Terapia de Renacimiento",
@@ -192,14 +271,14 @@ export const RetirosItems = [
       This alternative therapy is attributed to Leonard Orr, who says that while taking a shower he remembered his own birth.
       At Mariposa Azul we had the great opportunity to be part of the rebirth of 16 souls who joined together with Mother Water to relive and redefine their own birth.`,
     contTemES: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
     ],
     contTemEN: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
     ],
     facilitadores: [
       {
@@ -211,6 +290,14 @@ export const RetirosItems = [
     priceES: "Lorem ipsum",
     priceEN: "Lorem ipsum",
     ctaHref: "#",
+    collage: [
+      renacimiento1,
+      renacimiento2,
+      renacimiento3,
+      renacimiento4,
+      renacimiento5,
+      renacimiento6,
+    ],
   },
   {
     textES: "Desarrollando tu Alquimia Interior",
@@ -224,14 +311,14 @@ export const RetirosItems = [
     contDescEN: `In this experiential Re-Birth retreat we will explore limiting beliefs, unfinished grief and pending issues in your life that prevent you from reaching your maximum potential. We learned to identify them, manage them and make the decision to leave them behind to finally say a resounding YES to life and our own passion.
       Through various activities and self-exploration tools we will help you overcome emotional blockages, transform negative beliefs and open yourself to new possibilities.`,
     contTemES: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
     ],
     contTemEN: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
     ],
     facilitadores: [
       {
@@ -243,5 +330,6 @@ export const RetirosItems = [
     priceES: "Lorem ipsum",
     priceEN: "Lorem ipsum",
     ctaHref: "#",
+    collage: [alquimia1, alquimia2, alquimia3, alquimia4, alquimia5, alquimia6],
   },
 ];

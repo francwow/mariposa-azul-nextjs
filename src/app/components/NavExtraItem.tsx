@@ -1,6 +1,6 @@
 "use client";
 
-import { useExtraNav, useLanguage, useNav } from "../contexts/ContextHooks";
+import { useExtraNav, useLanguage, useNav } from "../_contexts/ContextHooks";
 import Link from "next/link";
 
 type NavExtraItems = {

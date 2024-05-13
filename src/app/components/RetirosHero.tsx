@@ -1,14 +1,15 @@
 // import { useLanguage } from "../contexts/ContextHooks";
 import Image from "next/image";
-import { RetirosItems } from "../data/RetirosItems";
+import { RetirosItems } from "../_data/RetirosItems";
 import { useEffect, useState, useRef } from "react";
+import { useLanguage } from "../_contexts/ContextHooks";
 
 type RetirosHeroProps = {
   id: string;
 };
 
 const RetirosHero = ({ id }: RetirosHeroProps) => {
-  // const { language } = useLanguage();
+  const { language } = useLanguage();
   const [translateY, setTranslateY] = useState(0);
   const Ref = useRef<HTMLDivElement | null>(null);
 
@@ -35,16 +36,16 @@ const RetirosHero = ({ id }: RetirosHeroProps) => {
     <section className="hero-section">
       {RetirosItems.map((item, index) => {
         return id === item.id ? (
-          <div key={index}>
+          <div className="hero-container" key={index}>
             <div className="hero-overlay"></div>
-            {/* <div
+            <div
               style={{
                 transform: `translate3d(0, ${1 - translateY / 10}px, 0)`,
               }}
               className="hero-heading"
             >
               <h1>{language === "ES" ? item.textES : item.textEN}</h1>
-            </div> */}
+            </div>
             <div ref={Ref} className="hero-img">
               <Image
                 src={item.heroImg}

@@ -1,5 +1,5 @@
 import MainBtn from "./MainBtn";
-import { useLanguage } from "../contexts/ContextHooks";
+import { useLanguage } from "../_contexts/ContextHooks";
 import { useInView } from "react-intersection-observer";
 import Image from "next/image";
 

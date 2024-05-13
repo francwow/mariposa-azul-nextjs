@@ -3,7 +3,7 @@
 import Footer from "@/app/components/Footer";
 import RetirosHero from "@/app/components/RetirosHero";
 import RetirosInfo from "@/app/components/RetirosInfo";
-import { RetirosItems } from "@/app/data/RetirosItems";
+import { RetirosItems } from "@/app/_data/RetirosItems";
 
 export default function Page({ params }: { params: { retirosID: string } }) {
   return (

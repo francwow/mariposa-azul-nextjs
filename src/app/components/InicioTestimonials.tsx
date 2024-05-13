@@ -1,8 +1,8 @@
 "use client";
 
-import { useLanguage } from "../contexts/ContextHooks";
+import { useLanguage } from "../_contexts/ContextHooks";
 import { useInView } from "react-intersection-observer";
-import { testimonialCarousel } from "../data/InicioItems";
+import { testimonialCarousel } from "../_data/InicioItems";
 import Carousel from "./Carousel";
 
 const InicioTestimonials = () => {

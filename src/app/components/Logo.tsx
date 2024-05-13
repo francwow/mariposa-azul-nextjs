@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useNav } from "../contexts/ContextHooks";
+import { useNav } from "../_contexts/ContextHooks";
 
 const Logo = () => {
   const { setNavActive } = useNav();

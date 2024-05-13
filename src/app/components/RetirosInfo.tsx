@@ -1,9 +1,11 @@
 "use client";
 
-import { useLanguage } from "../contexts/ContextHooks";
-import { RetirosItems } from "../data/RetirosItems";
+import Image from "next/image";
+import { useLanguage } from "../_contexts/ContextHooks";
+import { RetirosItems } from "../_data/RetirosItems";
 import Flowers from "./Flowers";
-import MainBtn from "./MainBtn";
+import Icon from "./GoogleIcon";
+import SpecialCTA from "./SpecialCTA";
 
 type RetirosInfoProps = {
   id: string;
@@ -18,9 +20,24 @@ const RetirosInfo = ({ id }: RetirosInfoProps) => {
         return id === item.id ? (
           <div className="info-wrapper" key={i}>
             <div className="info-container">
-              <div className="info">
-                <h2>{language === "ES" ? item.textES : item.textEN}</h2>
+              <div className="info retiros-desc">
+                {/* <h2>{language === "ES" ? item.textES : item.textEN}</h2> */}
                 <p>{language === "ES" ? item.contDescES : item.contDescEN}</p>
+              </div>
+              <div className="info retiros-collage">
+                {item.collage.map((img, index) => {
+                  return (
+                    <div key={index} className="img-container">
+                      <Image
+                        src={img.src}
+                        alt="Imagen de retiro de Mariposa Azul"
+                        width={400}
+                        height={400}
+                        priority
+                      />
+                    </div>
+                  );
+                })}
               </div>
             </div>
             <div className="info-container">
@@ -34,31 +51,37 @@ const RetirosInfo = ({ id }: RetirosInfoProps) => {
                 className="retiros-info-tematico"
               >
                 <div className="retiros-tematico-overlay"></div>
-                <div className="info-heading">
-                  <h2>
-                    {language === "ES"
-                      ? "Contenido Temático"
-                      : "Thematic Content"}
-                  </h2>
-                </div>
-                <div className="info-text">
-                  <ul className="info-items">
-                    {language === "ES"
-                      ? item.contTemES.map((contItem, j) => {
-                          return (
-                            <li className="info-item" key={j}>
-                              {contItem}
-                            </li>
-                          );
-                        })
-                      : item.contTemEN.map((contItem, j) => {
-                          return (
-                            <li className="info-item" key={j}>
-                              {contItem}
-                            </li>
-                          );
-                        })}
-                  </ul>
+                {/* <div className="retiros-tematico-divider"></div> */}
+                <div className="info-container">
+                  <div className="retiros-info-overlay"></div>
+                  <div className="info-heading">
+                    <h2>
+                      {language === "ES"
+                        ? "Contenido Temático"
+                        : "Thematic Content"}
+                    </h2>
+                  </div>
+                  <div className="info-text">
+                    <ul className="info-items">
+                      {language === "ES"
+                        ? item.contTemES.map((contItem, j) => {
+                            return (
+                              <div className="info-item" key={j}>
+                                <Icon icon="arrow_forward_ios" />
+                                <li>{contItem}</li>
+                              </div>
+                            );
+                          })
+                        : item.contTemEN.map((contItem, j) => {
+                            return (
+                              <div className="info-item" key={j}>
+                                <Icon icon="arrow_forward_ios" />
+                                <li>{contItem}</li>
+                              </div>
+                            );
+                          })}
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
@@ -87,16 +110,7 @@ const RetirosInfo = ({ id }: RetirosInfoProps) => {
               </div>
             </div>
             <div className="retiros-cta info">
-              <div className="info-cta">
-                <p>
-                  {language === "ES"
-                    ? `Inversión: ${item.priceES}`
-                    : `Investment: ${item.priceEN}`}
-                </p>
-                <MainBtn href={item.ctaHref} bgColor="white" target>
-                  {language === "ES" ? "inscríbete ahora" : "sign up now"}
-                </MainBtn>
-              </div>
+              <SpecialCTA item={item} />
             </div>
           </div>
         ) : null;

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { useNav } from "../contexts/ContextHooks";
+import { useNav } from "../_contexts/ContextHooks";
 import Languages from "./Languages";
 import NavExtraItem from "./NavExtraItem";
 import NavItem from "./NavItem";
@@ -74,17 +74,24 @@ const MainNav = () => {
       <nav className="main-nav">
         <NavExtraItem navName="retiros" navExtraItems={navExtraItems1} />
         <NavExtraItem navName="terapias" navExtraItems={navExtraItems2} />
-        <Languages />
+        <Languages mobile={true} />
         <ul className="nav-items">
           <NavItem
             delay="0.1s"
+            href="/"
+            textES="Inicio"
+            textEN="Home"
+            extra={false}
+          />
+          <NavItem
+            delay="0.2s"
             href="/somos"
             textES="Somos"
             textEN="About Us"
             extra={false}
           />
           <NavItem
-            delay="0.2s"
+            delay="0.3s"
             href="#retiros"
             textES="Retiros y Talleres"
             textEN="Retreats and Workshops"
@@ -93,7 +100,7 @@ const MainNav = () => {
             navExtraItems={navExtraItems1}
           />
           <NavItem
-            delay="0.3s"
+            delay="0.4s"
             href="#terapias"
             textES="Terapias"
             textEN="Therapies"
@@ -102,7 +109,7 @@ const MainNav = () => {
             navExtraItems={navExtraItems2}
           />
           <NavItem
-            delay="0.4s"
+            delay="0.5s"
             href="/contacto"
             textES="Contacto"
             textEN="Contact"

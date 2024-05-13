@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Icon from "./GoogleIcon";
-import { useNav } from "../contexts/ContextHooks";
+import { useNav } from "../_contexts/ContextHooks";
 
 const ScrollNav = () => {
   const [scrolled, setScrolled] = useState(false);

@@ -1,6 +1,6 @@
 "use client";
 
-import { useLanguage } from "../contexts/ContextHooks";
+import { useLanguage } from "../_contexts/ContextHooks";
 import MainBtn from "./MainBtn";
 import { useInView } from "react-intersection-observer";
 
@@ -23,9 +23,11 @@ const SomosInfo = () => {
           className={itemInView1 ? "info-heading fade-up" : "info-heading"}
         >
           <h2>
-            {language === "ES"
-              ? "Crear experiencias de bienestar con la naturaleza"
-              : "Create wellness experiences with nature"}
+            <q>
+              {language === "ES"
+                ? "Te ayudamos a dar el primer paso de tu propio sendero pero solo tu puedes caminarlo"
+                : "We help you take the first step on your own path but only you can walk it"}
+            </q>
           </h2>
         </div>
         <div

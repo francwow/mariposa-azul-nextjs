@@ -93,7 +93,7 @@ h2 {
 
 h3 {
   font-family: var(--font-inter);
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   margin-bottom: 0.5rem;
   font-weight: 600;
   line-height: normal;
@@ -124,6 +124,31 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
 .main-container {
   position: relative;
   min-height: 100vh;
+}
+
+.info-cta {
+  max-width: 400px;
+  margin: auto;
+  padding: 2rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--color-junglegreen);
+  box-shadow: 1px 3px 6px 2px rgba(0, 0, 0, 0.1);
+}
+
+.info-cta .info-cta-text {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: white;
+}
+
+.info-cta .main-btn-container a {
+  font-size: 1.1rem;
 }
 
 /* InfoCard */
@@ -158,6 +183,7 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
 .info-card-img {
   overflow: hidden;
   border-radius: 8px;
+  max-height: 250px;
 }
 
 .info-card-img img {
@@ -193,6 +219,13 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
 /* Languages */
 .languages-container {
   position: absolute;
+}
+
+.languages-container.desktop {
+  display: none;
+}
+
+.languages-container.mobile {
   top: 20px;
   right: 20px;
 }
@@ -417,6 +450,38 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
 
 .petal:nth-child(9) {
   transform: rotate(360deg);
+}
+
+/* InstagramFeed */
+.instagram-feed-container {
+  position: relative;
+  margin: auto;
+  background-color: var(--color-light);
+}
+
+.instagram-feed {
+  position: relative;
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  gap: 1rem;
+  padding: 4rem 1rem;
+}
+
+.instagram-item {
+  position: relative;
+  border-radius: 8px;
+  max-height: 500px;
+  overflow: hidden;
+}
+
+.instagram-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 1/1;
 }
 
 /* <Header /> */
@@ -804,7 +869,6 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
 .inicio-testimonials .carousel {
   position: relative;
   max-width: 900px;
-  height: 500px;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -997,6 +1061,7 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
   line-height: normal;
   color: white;
   margin-bottom: 0;
+  text-align: start;
 }
 
 /* SomosInfo */
@@ -1034,6 +1099,14 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
   flex-basis: 50%;
   width: 100%;
   max-width: 700px;
+}
+
+.info-video h2 {
+  font-size: 1.5rem;
+  font-family: var(--font-montserrat);
+  font-style: italic;
+  padding: 1rem;
+  font-weight: 500;
 }
 
 .somos-video {
@@ -1242,6 +1315,10 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
   width: 100%;
 }
 
+.retiros-desc {
+  font-weight: 600;
+}
+
 .retiros .info-item {
   font-family: var(--inter);
   color: var(--color-dark);
@@ -1251,23 +1328,59 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
 .retiros-info-tematico {
   position: relative;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: flex-start;
   align-items: center;
   /* height: 500px; */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  padding: 1rem;
   z-index: 99;
+  background-color: var(--color-junglegreen);
+  padding: 1rem;
+  /* clip-path: polygon(0 20%, 100% 20%, 100% 80%, 0 80%); */
+}
+
+.retiros-info-tematico .info-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #f4f0f0e0;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.retiros-info-tematico .info-heading h2 {
+  color: var(--color-dark);
+  padding: 1rem;
 }
 
 .retiros-tematico-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, transparent 5%, rgba(29, 29, 27) 100%);
+  background: linear-gradient(
+    to bottom,
+    transparent 20%,
+    var(--color-yellow) 100%
+  );
 }
+
+/* .retiros-info-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.6);
+  filter: blur(15px);
+} */
+
+/* .retiros-tematico-divider {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  flex-basis: 50%;
+} */
 
 .retiros-info-tematico .info-text {
   align-items: center;
@@ -1276,8 +1389,11 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
 }
 
 .retiros-info-tematico .info-items {
-  list-style-type: disc;
-  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
 .retiros-info-tematico h2 {
@@ -1291,26 +1407,90 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
 }
 
 .retiros-info-tematico .info-item {
-  color: white;
+  color: var(--color-dark);
   text-align: start;
   position: relative;
-  display: list-item;
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
   font-size: 1rem;
-  font-weight: 500;
-  padding: 5px 0;
+  font-weight: 400;
+  font-size: 1.1rem;
+  /* background-color: var(--color-light); */
+  /* background-color: var(--color-junglegreen);
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center; */
+}
+
+.info-item .symbol {
   font-size: 1.5rem;
+  font-weight: 200;
+  margin-right: 10px;
 }
 
 .retiros-cta {
   position: relative;
 }
 
-.retiros .info-cta p {
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  text-align: start;
-  color: var(--color-blue);
+.info-cta-text span:nth-child(1) {
+  font-weight: 200;
+}
+
+.retiros .info-text .info {
+  margin: 1rem 0;
+}
+
+.retiros-collage {
+  position: relative;
+  width: 100%;
+  display: grid;
+  gap: 0.5rem;
+  height: 400px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 30%);
+  justify-content: center;
+  align-content: center;
+  grid-template-areas:
+    "img-one img-two img-two"
+    "img-one img-three img-four"
+    "img-five img-three img-six";
+}
+
+.retiros-collage .img-container {
+  overflow: hidden;
+}
+
+.retiros-collage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+}
+
+.retiros-collage div:nth-child(1) {
+  grid-area: img-one;
+}
+
+.retiros-collage div:nth-child(2) {
+  grid-area: img-two;
+}
+
+.retiros-collage div:nth-child(3) {
+  grid-area: img-three;
+}
+
+.retiros-collage div:nth-child(4) {
+  grid-area: img-four;
+}
+
+.retiros-collage div:nth-child(5) {
+  grid-area: img-five;
+}
+
+.retiros-collage div:nth-child(6) {
+  grid-area: img-six;
 }
 
 /* Terapias */
@@ -1373,27 +1553,71 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
   justify-content: center;
   align-items: center;
   gap: 3rem;
+  width: 100%;
 }
 
 .terapias .info-container {
   width: 100%;
 }
 
+.terapias-desc {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 3px 6px 2px rgba(0, 0, 0, 0.2);
+}
+
+.terapias-desc .info-text {
+  padding: 1rem;
+  z-index: 99;
+  width: 100%;
+}
+
+.terapias-desc .info-text > p {
+  text-align: start;
+  line-height: 2rem;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 1rem;
+  max-width: 500px;
+  font-weight: 500;
+  border-radius: 8px;
+  margin: auto;
+}
+
+.terapias-desc .info-img {
+  position: absolute;
+  inset: 0;
+  max-width: 800px;
+  overflow: hidden;
+}
+
+@keyframes info-img {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.terapias-desc .info-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: info-img forwards infinite ease 20s;
+}
+
 .terapias .info-item {
   font-family: var(--inter);
   color: var(--color-dark);
   text-align: justify;
-}
-
-.terapias .info-cta {
-}
-
-.terapias .info-cta p {
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  text-align: start;
-  color: var(--color-blue);
 }
 
 .terapias .flower-0 {
@@ -1525,7 +1749,7 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
   }
 
   h3 {
-    font-size: 1.6rem;
+    font-size: 2rem;
     margin-bottom: 1rem;
   }
 
@@ -1534,6 +1758,8 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
     padding: 6rem 3rem;
   }
 
+  /* whatsapp */
+
   .whatsapp {
     width: 50px;
     height: 50px;
@@ -1541,9 +1767,16 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
     right: 40px;
   }
 
-  .languages-container {
-    top: 10px;
-    right: 10px;
+  /* languages */
+
+  .languages-container.mobile {
+    display: none;
+  }
+
+  .languages-container.desktop {
+    display: block;
+    top: 2rem;
+    right: 2rem;
   }
 
   .languages-es,
@@ -1566,6 +1799,38 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
 
   .main-btn-container {
     position: relative;
+  }
+
+  .info-cta .main-btn-container a {
+    font-size: 1.2rem;
+  }
+
+  /* InstagramFeed */
+  .instagram-feed-container {
+    position: relative;
+    margin: auto;
+  }
+
+  .instagram-feed {
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: 1rem;
+    padding: 6rem 3rem;
+  }
+
+  .instagram-item {
+    max-height: 500px;
+    overflow: hidden;
+  }
+
+  .instagram-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 1/1;
   }
 
   /* Flowers */
@@ -1767,6 +2032,10 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
     font-size: 3rem;
   }
 
+  .hero-heading h2 {
+    text-align: start;
+  }
+
   /* SomosInfo */
   .somos-info-section {
     gap: 5rem;
@@ -1778,6 +2047,12 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
     justify-content: center;
     align-items: center;
     max-width: 1200px;
+  }
+
+  .info-video h2 {
+    font-size: 2rem;
+    font-family: var(--font-montserrat);
+    font-style: italic;
   }
 
   .info .main-btn-container {
@@ -1871,8 +2146,58 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
     font-size: 1.2rem;
   }
 
+  .retiros-info-tematico {
+    padding: 4rem;
+  }
+
+  .retiros-info-tematico .info-container {
+    padding: 2rem;
+    display: flex;
+    max-width: 800px;
+    margin: auto;
+  }
+
   .retiros-info-tematico .info-item {
-    font-size: 1.8rem;
+    font-size: 1.3rem;
+  }
+
+  /* .retiros-info-tematico .info-items {
+    padding: 1rem;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(3, minmax(200px, 600px));
+    grid-template-rows: auto;
+  } */
+
+  /* .retiros-info-tematico .info-item {
+    color: var(--color-dark);
+    text-align: start;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 500;
+    font-size: 1.5rem;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+  } */
+
+  .retiros-collage {
+    position: relative;
+    width: 100%;
+    display: grid;
+    gap: 1rem;
+    height: 600px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 30%);
+    justify-content: center;
+    align-content: center;
+    grid-template-areas:
+      "img-one img-two img-two"
+      "img-one img-three img-four"
+      "img-five img-three img-six";
   }
 
   /* Terapias */
@@ -1887,6 +2212,32 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
 
   .terapias .info-item {
     font-size: 1.2rem;
+  }
+
+  .terapias .info {
+    padding: 3rem 0;
+  }
+
+  .terapias-desc {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    box-shadow: none;
+  }
+
+  .terapias-desc .info-text {
+    padding: 2rem;
+    margin-right: -4rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 2px 3px 1px rgba(0, 0, 0, 0.1);
+    min-width: 450px;
+  }
+
+  .terapias-desc .info-img {
+    position: relative;
+    max-width: 800px;
   }
 
   /* Contact */

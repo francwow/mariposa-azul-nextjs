@@ -3,7 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import Logo from "./Logo";
 import MainNav from "./MainNav";
-import { useNav } from "../contexts/ContextHooks";
+import { useNav } from "../_contexts/ContextHooks";
+import Languages from "./Languages";
 
 const Header = () => {
   const headerRef = useRef<HTMLDivElement | null>(null);
@@ -50,6 +51,7 @@ const Header = () => {
       className={scrolled ? "header-container scrolled" : "header-container"}
     >
       <header className="header">
+        <Languages mobile={false} />
         <Logo />
         <div
           tabIndex={0}

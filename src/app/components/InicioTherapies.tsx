@@ -1,6 +1,6 @@
 "use client";
 
-import { useLanguage } from "../contexts/ContextHooks";
+import { useLanguage } from "../_contexts/ContextHooks";
 import { useInView } from "react-intersection-observer";
 import InfoCard from "./InfoCard";
 
