@@ -1386,6 +1386,7 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
   align-items: center;
   justify-content: center;
   z-index: 99;
+  margin-bottom: 2rem;
 }
 
 .retiros-info-tematico .info-items {
@@ -1425,8 +1426,8 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
 }
 
 .info-item .symbol {
-  font-size: 1.5rem;
-  font-weight: 200;
+  font-size: 1.1rem;
+  font-weight: 300;
   margin-right: 10px;
 }
 

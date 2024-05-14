@@ -83,6 +83,9 @@ const RetirosInfo = ({ id }: RetirosInfoProps) => {
                     </ul>
                   </div>
                 </div>
+                <div className="retiros-cta info">
+                  <SpecialCTA item={item} />
+                </div>
               </div>
             </div>
             <div className="info-container">
@@ -108,9 +111,6 @@ const RetirosInfo = ({ id }: RetirosInfoProps) => {
                   })}
                 </div>
               </div>
-            </div>
-            <div className="retiros-cta info">
-              <SpecialCTA item={item} />
             </div>
           </div>
         ) : null;

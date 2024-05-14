@@ -1,62 +1,29 @@
-"use client";
+"use server";
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
-type InstagramImg = {
-  id: string;
-  media_url: string;
-};
+async function getData() {
+  const res = await fetch(
+    `https://graph.instagram.com/me/media?fields=id,media_url&access_token=${process.env.INSTAGRAM_KEY}`
+  );
+  // The return value is *not* serialized
+  // You can return Date, Map, Set, etc.
 
-type InstagramFeedType = InstagramImg[];
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error("Failed to fetch data");
+  }
 
-const InstagramFeed = () => {
-  // async function getData() {
-  //   const res = await fetch(
-  //     `https://graph.instagram.com/me/media?fields=id,media_url&access_token=${process.env.INSTAGRAM_KEY}`,
-  //     { method: "GET" }
-  //   );
-  //   // The return value is *not* serialized
-  //   // You can return Date, Map, Set, etc.
+  const feed = res.json();
 
-  //   if (!res.ok) {
-  //     // This will activate the closest `error.js` Error Boundary
-  //     throw new Error("Failed to fetch data");
-  //   }
+  return feed;
+}
 
-  //   const feed = res.json();
-
-  //   return feed;
-  // }
-
-  // const feed = await getData();
-  // const images = feed.data;
-  // console.log(images);
-
-  const [images, setImages] = useState<InstagramFeedType | null>(null);
-
-  const getData = async () => {
-    try {
-      const res = await fetch(
-        `https://graph.instagram.com/me/media?fields=id,media_url&access_token=IGQWRPSjJremM1UUhZAWmF1V3A5d2NaS19zVnE5MU1YQVc5WDBPSUxTc194alo0TmxxdXZAwV1d3R1NpUXE2aThLcVJLSlNTWDg5Wl8xazRGVGFUSkhOVnNfVzVZAQkxGZA1VGOVh1akZAhdGxYQVQzOGltLXZAYTU5FcFkZD`
-      );
-
-      if (res) {
-        const { data } = await res.json();
-        console.log(data);
-        if (data) {
-          setImages(data);
-        }
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  useEffect(() => {
-    getData();
-  }, []);
+const InstagramFeed = async () => {
+  const feed = await getData();
+  const images = feed.data;
+  console.log(images);
 
   return (
     <section className="instagram-feed-container">
