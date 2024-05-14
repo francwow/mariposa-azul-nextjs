@@ -15,8 +15,6 @@ async function getData() {
 
   const feed = res.json();
 
-  console.log(feed);
-
   return feed;
 }
 
