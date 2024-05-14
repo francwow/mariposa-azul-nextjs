@@ -21,7 +21,7 @@ const SpecialCTA = ({ item }: SpecialCTAProps) => {
           <span>{item.priceES}</span>
         </p>
       ) : (
-        <p>
+        <p style={{ textAlign: "center" }} className="info-cta-text">
           <span>Investment: </span>
           <br />
           <span>{item.priceEN}</span>

@@ -6,6 +6,7 @@ import { RetirosItems } from "../_data/RetirosItems";
 import Flowers from "./Flowers";
 import Icon from "./GoogleIcon";
 import SpecialCTA from "./SpecialCTA";
+import TransitionArrow from "./TransitionArrow";
 
 type RetirosInfoProps = {
   id: string;
@@ -28,6 +29,7 @@ const RetirosInfo = ({ id }: RetirosInfoProps) => {
                 {item.collage.map((img, index) => {
                   return (
                     <div key={index} className="img-container">
+                      <div className="collage-img-overlay"></div>
                       <Image
                         src={img.src}
                         alt="Imagen de retiro de Mariposa Azul"
@@ -40,6 +42,7 @@ const RetirosInfo = ({ id }: RetirosInfoProps) => {
                 })}
               </div>
             </div>
+            <TransitionArrow />
             <div className="info-container">
               <div
                 style={{
@@ -88,6 +91,7 @@ const RetirosInfo = ({ id }: RetirosInfoProps) => {
                 </div>
               </div>
             </div>
+            <TransitionArrow />
             <div className="info-container">
               <Flowers number={2} />
               <div className="info-text">
