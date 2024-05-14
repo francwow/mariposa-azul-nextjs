@@ -3,7 +3,7 @@ import Link from "next/link";
 
 async function getData() {
   const res = await fetch(
-    `https://graph.instagram.com/me/media?fields=id,caption,media_url,timestamp,media_type,permalink&access_token=${process.env.INSTAGRAM_KEY}`
+    `https://graph.instagram.com/me/media?fields=id,caption,media_url&access_token=${process.env.INSTAGRAM_KEY}`
   );
   // The return value is *not* serialized
   // You can return Date, Map, Set, etc.

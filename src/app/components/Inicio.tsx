@@ -1,7 +1,7 @@
 import InicioSoon from "./InicioSoon";
 import InicioTherapies from "./InicioTherapies";
 import InicioTestimonials from "./InicioTestimonials";
-// import InstagramFeed from "./InstagramFeed";
+import InstagramFeed from "./InstagramFeed";
 import InicioCarousel from "./InicioCarousel";
 
 const Inicio = () => {
@@ -11,7 +11,7 @@ const Inicio = () => {
       <InicioSoon />
       <InicioTherapies />
       <InicioTestimonials />
-      {/* <InstagramFeed /> */}
+      <InstagramFeed />
     </div>
   );
 };
