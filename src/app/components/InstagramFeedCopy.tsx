@@ -1,9 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const InstagramFeed = ({ feed }: any) => {
-  const images = feed.data;
-
+const InstagramFeed = ({ images }: any) => {
   return (
     <section className="instagram-feed-container">
       <div className="instagram-feed">

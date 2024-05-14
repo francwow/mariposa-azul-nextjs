@@ -1,7 +1,7 @@
 import Footer from "./components/Footer";
 import Inicio from "./components/Inicio";
 
-export default async function Home() {
+export default function Home() {
   return (
     <main className="main-container">
       <Inicio />
