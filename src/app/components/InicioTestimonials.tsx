@@ -1,26 +1,19 @@
 "use client";
 
 import { useLanguage } from "../_contexts/ContextHooks";
-import { useInView } from "react-intersection-observer";
 import { testimonialCarousel } from "../_data/InicioItems";
 import Carousel from "./Carousel";
+import InViewEl from "./InView";
 
 const InicioTestimonials = () => {
   const { language } = useLanguage();
-  const { inView: itemInView, ref: itemRef } = useInView({
-    threshold: 0.6,
-    triggerOnce: true,
-  });
 
   return (
     <section className="inicio-testimonials content-section">
-      <h2
-        style={{ opacity: "0" }}
-        ref={itemRef}
-        className={itemInView ? "fade-up" : ""}
-      >
-        {language === "ES" ? "Testimonios" : "Testimonials"}
-      </h2>
+      <InViewEl activeClass="fade-up" notActiveClass="">
+        <h2>{language === "ES" ? "Testimonios" : "Testimonials"}</h2>
+      </InViewEl>
+
       <Carousel carouselItems={testimonialCarousel} controls="arrow" />
     </section>
   );

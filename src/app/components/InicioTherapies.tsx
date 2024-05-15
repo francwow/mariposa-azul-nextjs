@@ -1,27 +1,22 @@
 "use client";
 
 import { useLanguage } from "../_contexts/ContextHooks";
-import { useInView } from "react-intersection-observer";
 import InfoCard from "./InfoCard";
+import InViewEl from "./InView";
 
 const InicioTherapies = () => {
   const { language } = useLanguage();
-  const { inView: itemInView, ref: itemRef } = useInView({
-    threshold: 0.6,
-    triggerOnce: true,
-  });
 
   return (
     <section className="inicio-therapies content-section">
-      <h2
-        style={{ opacity: "0" }}
-        ref={itemRef}
-        className={itemInView ? "fade-up" : ""}
-      >
-        {language === "ES"
-          ? "Terapias Alternativas Personalizadas"
-          : "Personalized Alternative Therapies"}
-      </h2>
+      <InViewEl activeClass="fade-up" notActiveClass="">
+        <h2>
+          {language === "ES"
+            ? "Terapias Alternativas Personalizadas"
+            : "Personalized Alternative Therapies"}
+        </h2>
+      </InViewEl>
+
       <div className="therapies-items">
         <InfoCard
           imgSrc="/terapias/terapias-escucha.webp"

@@ -1,27 +1,22 @@
 "use client";
 
-import { useInView } from "react-intersection-observer";
 import { useLanguage } from "../_contexts/ContextHooks";
 import InfoCard from "./InfoCard";
 import Flowers from "./Flowers";
+import InViewEl from "./InView";
 
 const InicioSoon = () => {
   const { language } = useLanguage();
-  const { inView: itemInView, ref: itemRef } = useInView({
-    threshold: 0.6,
-    triggerOnce: true,
-  });
 
   return (
     <section className="inicio-soon content-section">
       <Flowers number={2} />
-      <h2
-        style={{ opacity: "0" }}
-        ref={itemRef}
-        className={itemInView ? "fade-up" : ""}
-      >
-        {language === "ES" ? "Retiros y Talleres" : "Retreats and Workshops"}
-      </h2>
+      <InViewEl activeClass="fade-up" notActiveClass="">
+        <h2>
+          {language === "ES" ? "Retiros y Talleres" : "Retreats and Workshops"}
+        </h2>
+      </InViewEl>
+
       <div className="soon-items">
         <InfoCard
           imgSrc="/retiros/proximos/crisalida/crisalida7.webp"

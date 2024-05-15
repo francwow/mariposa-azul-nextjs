@@ -2,29 +2,20 @@
 
 import { useLanguage } from "../_contexts/ContextHooks";
 import Flowers from "./Flowers";
+import InViewEl from "./InView";
 import SomosFundadorasItem from "./SomosFundadorasItem";
-import { useInView } from "react-intersection-observer";
 
 const SomosFundadoras = () => {
   const { language } = useLanguage();
-  const { inView: itemInView, ref: itemRef } = useInView({
-    threshold: 0.6,
-    triggerOnce: true,
-  });
 
   return (
     <section className="somos-fundadoras-section content-section">
-      <div
-        ref={itemRef}
-        style={{ opacity: "0" }}
-        className={
-          itemInView
-            ? "somos-fundadoras-heading fade-up"
-            : "somos-fundadoras-heading"
-        }
+      <InViewEl
+        activeClass="somos-fundadoras-heading fade-up"
+        notActiveClass="somos-fundadoras-heading"
       >
         <h2>{language === "ES" ? "Fundadoras" : "Founders"}</h2>
-      </div>
+      </InViewEl>
       <div className="somos-fundadoras-info">
         <SomosFundadorasItem
           h3="Patricia Silva"

@@ -1,7 +1,7 @@
 import MainBtn from "./MainBtn";
 import { useLanguage } from "../_contexts/ContextHooks";
-import { useInView } from "react-intersection-observer";
 import Image from "next/image";
+import InViewEl from "./InView";
 
 type InfoCardProps = {
   imgSrc: string;
@@ -15,16 +15,11 @@ type InfoCardProps = {
 
 const InfoCard = (props: InfoCardProps) => {
   const { language } = useLanguage();
-  const { inView: itemInView, ref: itemRef } = useInView({
-    threshold: 0.3,
-    triggerOnce: true,
-  });
 
   return (
-    <div
-      ref={itemRef}
-      style={{ opacity: "0" }}
-      className={itemInView ? "info-card-item fade-up" : "info-card-item"}
+    <InViewEl
+      activeClass="info-card-item fade-up"
+      notActiveClass="info-card-item"
     >
       <div className="info-card-img">
         <Image src={props.imgSrc} alt={props.alt} width={700} height={700} />
@@ -48,7 +43,7 @@ const InfoCard = (props: InfoCardProps) => {
       <MainBtn target={false} href="/" bgColor={props.btnBgColor}>
         {language === "ES" ? "más información" : "more info"}
       </MainBtn>
-    </div>
+    </InViewEl>
   );
 };
 

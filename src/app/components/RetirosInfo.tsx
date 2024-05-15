@@ -21,10 +21,29 @@ const RetirosInfo = ({ id }: RetirosInfoProps) => {
         return id === item.id ? (
           <div className="info-wrapper" key={i}>
             <div className="info-container">
-              <div className="info retiros-desc">
-                {/* <h2>{language === "ES" ? item.textES : item.textEN}</h2> */}
-                <p>{language === "ES" ? item.contDescES : item.contDescEN}</p>
-              </div>
+              {item.contDescENTwo ? (
+                <div className="info retiros-desc">
+                  <p>
+                    {language === "ES"
+                      ? item.contDescESOne
+                      : item.contDescENOne}
+                  </p>
+                  <p>
+                    {language === "ES"
+                      ? item.contDescESTwo
+                      : item.contDescENTwo}
+                  </p>
+                </div>
+              ) : (
+                <div className="info retiros-desc">
+                  <p>
+                    {language === "ES"
+                      ? item.contDescESOne
+                      : item.contDescESTwo}
+                  </p>
+                </div>
+              )}
+
               <div className="info retiros-collage">
                 {item.collage.map((img, index) => {
                   return (

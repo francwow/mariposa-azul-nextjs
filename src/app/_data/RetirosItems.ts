@@ -67,8 +67,10 @@ export type RetirosItemType = {
   href: string;
   heroImg: StaticImageData;
   infoImg: StaticImageData;
-  contDescES: string;
-  contDescEN: string;
+  contDescESOne: string;
+  contDescESTwo?: string | undefined;
+  contDescENOne: string;
+  contDescENTwo?: string;
   contTemES: string[];
   contTemEN: string[];
   facilitadores: { name: string; textES: string; textEN: string }[];
@@ -87,9 +89,13 @@ export const RetirosItems: RetirosItemType[] = [
     id: "crisalida",
     heroImg: img1,
     infoImg: img7,
-    contDescES: `En este retiro vivencial de Re-Nacimiento te ofrecemos la oportunidad de explorar las creencias limitantes, duelos inconclusos y temas pendientes en tu vida que te impiden alcanzar tu máximo potencial. Aprenderás a identificarlos, gestionarlos y tomar la decisión de dejarlos atrás para finalmente dar un rotundo SÍ a la vida y a tu propia pasión.`,
-    contDescEN:
-      "In this experiential Re-Birth retreat we offer you the opportunity to explore limiting beliefs, unfinished grief and pending issues in your life that prevent you from reaching your maximum potential. You will learn to identify them, manage them and make the decision to leave them behind to finally say a resounding YES to life and your own passion.",
+    contDescESOne: `En este retiro vivencial de Re-Nacimiento te ofrecemos la oportunidad de explorar las creencias limitantes, duelos inconclusos y temas pendientes en tu vida que te impiden alcanzar tu máximo potencial.`,
+    contDescESTwo:
+      "Aprenderás a identificarlos, gestionarlos y tomar la decisión de dejarlos atrás para finalmente dar un rotundo SÍ a la vida y a tu propia pasión.",
+    contDescENOne:
+      "In this experiential Re-Birth retreat we offer you the opportunity to explore limiting beliefs, unfinished grief and pending issues in your life that prevent you from reaching your maximum potential.",
+    contDescENTwo:
+      " You will learn to identify them, manage them and make the decision to leave them behind to finally say a resounding YES to life and your own passion.",
     contTemES: [
       "Anclas Transgeneracionales - yacentes",
       "Duelos no resueltos y ciclos de experiencia inconclusos",
@@ -151,15 +157,14 @@ export const RetirosItems: RetirosItemType[] = [
     id: "tambor-ceremonial",
     heroImg: img2,
     infoImg: img8,
-    contDescES: `El tambor se usa para activar y curar nuestro espíritu, alineando la vibración de nuestro corazón con el de la Madre Tierra. Cada tambor tiene su propio sonido sin igual. Es usado en ceremonias, danzas, canciones, celebraciones, y en la actualidad es usado por diferentes practicantes de Terapia Alternativas y tradiciones de Oriente como el Yoga y Reiki. 
-    El tambor es una entidad vibrante, en el cual habitan el espíritu del árbol con el que fue elaborado el marco, el espíritu del animal que le dio su piel al parche, y el espíritu de aquel que le dio con su temple el aliento de vida .  
-    El taller será un mágico encuentro en el que CADA PARTICIPANTE CONSTRUIRÁ SU PROPIO TAMBOR CON SUS MANOS, ENERGÍA Y PROPÓSITO PERSONAL . Será un momento de introspección, concentración y meditación.  
-    Así mismo, tendremos un espacio de sensibilización sonora para que aprendas a tocar tu tambor y entrar en estados de profunda meditación entre el latido de tu tambor y el latido de tu corazón. 
-    `,
-    contDescEN: `The drum is used to activate and heal our spirit, aligning the vibration of our heart with that of Mother Earth. Each drum has its own unparalleled sound. It is used in ceremonies, dances, songs, celebrations, and is currently used by different practitioners of Alternative Therapy and Eastern traditions such as Yoga and Reiki.
-    The drum is a vibrant entity, inhabited by the spirit of the tree with which the frame was made, the spirit of the animal that gave its skin to the head, and the spirit of the one who gave it the breath of life with its temper. .
-    The workshop will be a magical encounter in which EACH PARTICIPANT WILL BUILD THEIR OWN DRUM WITH THEIR HANDS, ENERGY AND PERSONAL PURPOSE. It will be a moment of introspection, concentration and meditation.
-    Likewise, we will have a sound awareness space for you to learn to play your drum and enter states of deep meditation between the beat of your drum and the beat of your heart.`,
+    contDescESOne: `El tambor se usa para activar y curar nuestro espíritu, alineando la vibración de nuestro corazón con el de la Madre Tierra. Cada tambor tiene su propio sonido sin igual. Es usado en ceremonias, danzas, canciones, celebraciones, y en la actualidad es usado por diferentes practicantes de Terapia Alternativas y tradiciones de Oriente como el Yoga y Reiki. 
+    El tambor es una entidad vibrante, en el cual habitan el espíritu del árbol con el que fue elaborado el marco, el espíritu del animal que le dio su piel al parche, y el espíritu de aquel que le dio con su temple el aliento de vida.`,
+    contDescESTwo:
+      "El taller será un mágico encuentro en el que CADA PARTICIPANTE CONSTRUIRÁ SU PROPIO TAMBOR CON SUS MANOS, ENERGÍA Y PROPÓSITO PERSONAL . Será un momento de introspección, concentración y meditación. Así mismo, tendremos un espacio de sensibilización sonora para que aprendas a tocar tu tambor y entrar en estados de profunda meditación entre el latido de tu tambor y el latido de tu corazón.",
+    contDescENOne: `The drum is used to activate and heal our spirit, aligning the vibration of our heart with that of Mother Earth. Each drum has its own unparalleled sound. It is used in ceremonies, dances, songs, celebrations, and is currently used by different practitioners of Alternative Therapy and Eastern traditions such as Yoga and Reiki.
+    The drum is a vibrant entity, inhabited by the spirit of the tree with which the frame was made, the spirit of the animal that gave its skin to the head, and the spirit of the one who gave it the breath of life with its temper.`,
+    contDescENTwo:
+      "The workshop will be a magical encounter in which EACH PARTICIPANT WILL BUILD THEIR OWN DRUM WITH THEIR HANDS, ENERGY AND PERSONAL PURPOSE. It will be a moment of introspection, concentration and meditation. Likewise, we will have a sound awareness space for you to learn to play your drum and enter states of deep meditation between the beat of your drum and the beat of your heart.",
     contTemES: [
       "Ritual de tejido tambor ceremonial",
       "Sensibilización sonora",
@@ -191,10 +196,12 @@ export const RetirosItems: RetirosItemType[] = [
     id: "ser-libre",
     heroImg: img3,
     infoImg: img9,
-    contDescES: `El retiro "Ser Libre" es un retiro vivencial de dos días y una noche diseñada para permitir a los participantes conectarse profundamente con su cuerpo, sus sentidos y sus emociones, a través de la inmersión en el mundo natural.
-      Basado en la metodología de la liberación alquímica, este retiro combina diversas prácticas, como constelaciones, respiración consciente y meditación, para facilitar la liberación de bloqueos emocionales y promover la autenticidad y la plenitud en la vida cotidiana.`,
-    contDescEN: `The "Be Free" retreat is a two-day, one-night experiential retreat designed to allow participants to connect deeply with their body, their senses and their emotions, through immersion in the natural world.
-      Based on the methodology of alchemical liberation, this retreat combines various practices, such as constellations, conscious breathing and meditation, to facilitate the release of emotional blockages and promote authenticity and wholeness in everyday life.`,
+    contDescESOne: `El retiro "Ser Libre" es un retiro vivencial de dos días y una noche diseñada para permitir a los participantes conectarse profundamente con su cuerpo, sus sentidos y sus emociones, a través de la inmersión en el mundo natural.`,
+    contDescESTwo:
+      "Basado en la metodología de la liberación alquímica, este retiro combina diversas prácticas, como constelaciones, respiración consciente y meditación, para facilitar la liberación de bloqueos emocionales y promover la autenticidad y la plenitud en la vida cotidiana.",
+    contDescENOne: `The "Be Free" retreat is a two-day, one-night experiential retreat designed to allow participants to connect deeply with their body, their senses and their emotions, through immersion in the natural world.`,
+    contDescENTwo:
+      "Based on the methodology of alchemical liberation, this retreat combines various practices, such as constellations, conscious breathing and meditation, to facilitate the release of emotional blockages and promote authenticity and wholeness in everyday life.",
     contTemES: [
       "Constelación grupal enfocada en explorar y sanar patrones y dinámicas familiares, liberando bloqueos emocionales, promoviendo la integración y la reconciliación",
       "Inmersión en Hielo con entrenamiento mental y técnicas de respiración",
@@ -230,9 +237,9 @@ export const RetirosItems: RetirosItemType[] = [
     id: "tejido",
     heroImg: img4,
     infoImg: img10,
-    contDescES:
+    contDescESOne:
       "Aprende los principios básicos de la técnica de tejido de macramé y crochet en un espacio natural junto a un hermoso río. Regálate un espacio de creación e inspiración en medio de la naturaleza.",
-    contDescEN:
+    contDescENOne:
       "Learn the basic principles of macramé and crochet weaving techniques in a natural space next to a beautiful river. Give yourself a space for creation and inspiration in the middle of nature.",
     contTemES: [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
@@ -263,13 +270,12 @@ export const RetirosItems: RetirosItemType[] = [
     id: "renacimiento",
     heroImg: img5,
     infoImg: img11,
-    contDescES: `La terapia de renacimiento o rebirthing es una herramienta para la sanación emocional basada en ciclos de respiración con el objetivo de liberar tensiones, traumas y conflictos, acumulados en el cuerpo físico y emocional y que pueden tener origen desde el momento de tu nacimiento. 
-      Está terapia alternativa es atribuida a Leonard Orr, quien dice que mientras tomaba una ducha recordó su propio nacimiento. 
-      En Mariposa Azul tuvimos la grandiosa oportunidad de ser parte del renacimiento de 16 almas que se unieron junto a la madre agua para revivir y resignificar su propio parto.
-      `,
-    contDescEN: `Rebirth or rebirthing therapy is a tool for emotional healing based on breathing cycles with the aim of releasing tensions, traumas and conflicts, accumulated in the physical and emotional body and that may originate from the moment of your birth.
-      This alternative therapy is attributed to Leonard Orr, who says that while taking a shower he remembered his own birth.
-      At Mariposa Azul we had the great opportunity to be part of the rebirth of 16 souls who joined together with Mother Water to relive and redefine their own birth.`,
+    contDescESOne: `La terapia de renacimiento o rebirthing es una herramienta para la sanación emocional basada en ciclos de respiración con el objetivo de liberar tensiones, traumas y conflictos, acumulados en el cuerpo físico y emocional y que pueden tener origen desde el momento de tu nacimiento.`,
+    contDescESTwo:
+      "Está terapia alternativa es atribuida a Leonard Orr, quien dice que mientras tomaba una ducha recordó su propio nacimiento. En Mariposa Azul tuvimos la grandiosa oportunidad de ser parte del renacimiento de 16 almas que se unieron junto a la madre agua para revivir y resignificar su propio parto.",
+    contDescENOne: `Rebirth or rebirthing therapy is a tool for emotional healing based on breathing cycles with the aim of releasing tensions, traumas and conflicts, accumulated in the physical and emotional body and that may originate from the moment of your birth.`,
+    contDescENTwo:
+      "This alternative therapy is attributed to Leonard Orr, who says that while taking a shower he remembered his own birth. At Mariposa Azul we had the great opportunity to be part of the rebirth of 16 souls who joined together with Mother Water to relive and redefine their own birth.",
     contTemES: [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
@@ -306,10 +312,12 @@ export const RetirosItems: RetirosItemType[] = [
     id: "alquimia",
     heroImg: img6,
     infoImg: img12,
-    contDescES: `En este retiro vivencial de Re-Nacimiento exploraramos las creencias limitantes, duelos inconclusos y temas pendientes en tu vida que te impiden alcanzar tu máximo potencial. Aprendimos a identificarlos, gestionarlos y tomar la decisión de dejarlos atrás para finalmente dar un rotundo SÍ a la vida y a nuestra propia pasión.
-      A través de diversas actividades y herramientas de autoexploración te acompañaremos a superar bloqueos emocionales, transformar creencias negativas y abrirte a nuevas posibilidades.`,
-    contDescEN: `In this experiential Re-Birth retreat we will explore limiting beliefs, unfinished grief and pending issues in your life that prevent you from reaching your maximum potential. We learned to identify them, manage them and make the decision to leave them behind to finally say a resounding YES to life and our own passion.
-      Through various activities and self-exploration tools we will help you overcome emotional blockages, transform negative beliefs and open yourself to new possibilities.`,
+    contDescESOne: `En este retiro vivencial de Re-Nacimiento exploraramos las creencias limitantes, duelos inconclusos y temas pendientes en tu vida que te impiden alcanzar tu máximo potencial. Aprendimos a identificarlos, gestionarlos y tomar la decisión de dejarlos atrás para finalmente dar un rotundo SÍ a la vida y a nuestra propia pasión.`,
+    contDescESTwo:
+      "A través de diversas actividades y herramientas de autoexploración te acompañaremos a superar bloqueos emocionales, transformar creencias negativas y abrirte a nuevas posibilidades.",
+    contDescENOne: `In this experiential Re-Birth retreat we will explore limiting beliefs, unfinished grief and pending issues in your life that prevent you from reaching your maximum potential. We learned to identify them, manage them and make the decision to leave them behind to finally say a resounding YES to life and our own passion.`,
+    contDescENTwo:
+      "Through various activities and self-exploration tools we will help you overcome emotional blockages, transform negative beliefs and open yourself to new possibilities.",
     contTemES: [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",

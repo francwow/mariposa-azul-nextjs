@@ -1,38 +1,30 @@
 "use client";
 
 import { useLanguage } from "../_contexts/ContextHooks";
+import InViewEl from "./InView";
 import MainBtn from "./MainBtn";
-import { useInView } from "react-intersection-observer";
 
 const SomosInfo = () => {
   const { language } = useLanguage();
-  const { inView: itemInView1, ref: itemRef1 } = useInView({
-    threshold: 0.3,
-    triggerOnce: true,
-  });
-  const { inView: itemInView2, ref: itemRef2 } = useInView({
-    threshold: 0.3,
-    triggerOnce: true,
-  });
 
   return (
     <section className="somos-info-section content-section">
-      <div ref={itemRef1} className="info-video">
-        <div
-          style={{ opacity: "0" }}
-          className={itemInView1 ? "info-heading fade-up" : "info-heading"}
+      <div className="info-video">
+        <InViewEl
+          activeClass="info-heading fade-up"
+          notActiveClass="info-heading"
         >
           <h2>
             <q>
               {language === "ES"
-                ? "Te ayudamos a dar el primer paso de tu propio sendero pero solo tu puedes caminarlo"
-                : "We help you take the first step on your own path but only you can walk it"}
+                ? "Te ayudamos a dar el primer paso de tu propio sendero para que puedas caminarlo"
+                : "We help you take the first step on your own path so that you can walk it"}
             </q>
           </h2>
-        </div>
-        <div
-          style={{ opacity: "0" }}
-          className={itemInView1 ? "somos-video fade-up" : "somos-video"}
+        </InViewEl>
+        <InViewEl
+          activeClass="somos-video fade-up"
+          notActiveClass="somos-video"
         >
           <video
             width={1280}
@@ -46,20 +38,17 @@ const SomosInfo = () => {
           >
             <source src="/video/somos-video.mp4" type="video/mp4" />
           </video>
-        </div>
+        </InViewEl>
       </div>
-      <div ref={itemRef2} className="info-text">
-        <div
-          style={{ opacity: "0" }}
-          className={itemInView2 ? "info-heading fade-up" : "info-heading"}
+      <div className="info-text">
+        <InViewEl
+          activeClass="info-heading fade-up"
+          notActiveClass="info-heading"
         >
           <h2>{language === "ES" ? "Sobre Mariposa" : "About Mariposa"}</h2>
-        </div>
+        </InViewEl>
         {language === "ES" ? (
-          <div
-            style={{ opacity: "0" }}
-            className={itemInView2 ? "info fade-up" : "info"}
-          >
+          <InViewEl activeClass="info fade-up" notActiveClass="info">
             <p>
               Mariposa Azul se gesta con la intención de crear retiros de
               bienestar y experiencias integrales del ser inmersos en un paraíso
@@ -84,12 +73,9 @@ const SomosInfo = () => {
             >
               Síguenos en Instagram
             </MainBtn>
-          </div>
+          </InViewEl>
         ) : (
-          <div
-            style={{ opacity: "0" }}
-            className={itemInView2 ? "info fade-up" : "info"}
-          >
+          <InViewEl activeClass="info fade-up" notActiveClass="info">
             <p>
               Mariposa Azul was created with the intention of creating wellness
               retreats and integral experiences of being immersed in a natural
@@ -113,7 +99,7 @@ const SomosInfo = () => {
             >
               Follow us on Instagram
             </MainBtn>
-          </div>
+          </InViewEl>
         )}
       </div>
     </section>
