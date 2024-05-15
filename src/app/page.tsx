@@ -1,5 +1,7 @@
 import Footer from "./components/Footer";
 import Inicio from "./components/Inicio";
+import Link from "next/link";
+import Image from "next/image";
 
 async function getData() {
   const res = await fetch(
@@ -19,15 +21,43 @@ async function getData() {
 }
 
 export default async function Home() {
-  const data = await getData();
-  const images = data.data;
-
-  console.log(images);
-
   return (
     <main className="main-container">
-      <Inicio images={images} />
+      <Inicio />
+      <InstagramFeed />
       <Footer />
     </main>
   );
 }
+
+const InstagramFeed = async () => {
+  const feed = await getData();
+  const images = feed.data;
+  console.log(images);
+
+  return (
+    <section className="instagram-feed-container">
+      <div className="instagram-feed">
+        {images !== null
+          ? images.map((image: any) => {
+              return (
+                <Link
+                  href={"https://www.instagram.com/somos.mariposa.azul/"}
+                  target="_blank"
+                  className="instagram-item"
+                  key={image.id}
+                >
+                  <Image
+                    src={image.media_url}
+                    alt="instagram image"
+                    width={600}
+                    height={600}
+                  />
+                </Link>
+              );
+            })
+          : null}
+      </div>
+    </section>
+  );
+};

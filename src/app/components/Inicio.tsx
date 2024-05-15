@@ -3,9 +3,9 @@ import InicioTherapies from "./InicioTherapies";
 import InicioTestimonials from "./InicioTestimonials";
 // import InstagramFeed from "./InstagramFeed";
 import InicioCarousel from "./InicioCarousel";
-import InstagramFeed from "./InstagramFeedCopy";
+// import InstagramFeed from "./InstagramFeedCopy";
 
-const Inicio = ({ images }: any) => {
+const Inicio = () => {
   return (
     <div className="inicio-wrapper">
       <InicioCarousel />
@@ -13,7 +13,7 @@ const Inicio = ({ images }: any) => {
       <InicioTherapies />
       <InicioTestimonials />
       {/* <InstagramFeed /> */}
-      <InstagramFeed images={images} />
+      {/* <InstagramFeed images={images} /> */}
     </div>
   );
 };
