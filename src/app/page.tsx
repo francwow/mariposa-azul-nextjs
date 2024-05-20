@@ -1,15 +1,12 @@
 import Footer from "./components/Footer";
 import Inicio from "./components/Inicio";
-import InstagramFeed from "./components/InstagramFeedCopy";
+import Image from "next/image";
 
 async function getData() {
   let url = `https://graph.instagram.com/me/media?fields=id,media_url&access_token=${process.env.INSTAGRAM_KEY}`;
   const res = await fetch(url);
-  // The return value is *not* serialized
-  // You can return Date, Map, Set, etc.
 
   if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
     throw new Error("Failed to fetch data");
   }
 
@@ -17,15 +14,35 @@ async function getData() {
 }
 
 export default async function Home() {
-  const feed = await getData();
-  const images = feed.data;
-  console.log(images);
+  const data = await getData();
+  const feed = data.data;
+  console.log(feed);
 
   return (
-    <main className="main-container">
-      <Inicio />
-      <InstagramFeed images={images} />
-      <Footer />
-    </main>
+    <>
+      {feed && (
+        <main className="main-container">
+          <Inicio />
+          <section className="instagram-feed-container">
+            <div className="instagram-feed">
+              {feed.map((image: any) => {
+                return (
+                  <div key={image.id} className="instagram-item">
+                    <Image
+                      src={image.media_url}
+                      alt="instagram image"
+                      width={600}
+                      height={600}
+                      priority
+                    />
+                  </div>
+                );
+              })}
+            </div>
+          </section>
+          <Footer />
+        </main>
+      )}
+    </>
   );
 }
