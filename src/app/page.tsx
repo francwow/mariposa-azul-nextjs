@@ -3,6 +3,9 @@ import Inicio from "./components/Inicio";
 // import Link from "next/link";
 // import Image from "next/image";
 
+export const dynamic = "force-dynamic";
+export const fetchCache = "force-no-store";
+
 // async function getData() {
 //   const res = await fetch(
 //     `https://graph.instagram.com/me/media?fields=id,media_url&access_token=${process.env.INSTAGRAM_KEY}`

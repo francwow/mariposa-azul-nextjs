@@ -4,9 +4,6 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-export const dynamic = "force-dynamic";
-export const fetchCache = "force-no-store";
-
 // async function getData() {
 //   const res = await fetch(
 //     `https://graph.instagram.com/me/media?fields=id,media_url&access_token=${process.env.INSTAGRAM_KEY}`
