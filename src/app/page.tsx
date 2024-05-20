@@ -20,7 +20,7 @@ import Inicio from "./components/Inicio";
 //   return feed;
 // }
 
-export default async function Home() {
+export default function Home() {
   return (
     <main className="main-container">
       <Inicio />
