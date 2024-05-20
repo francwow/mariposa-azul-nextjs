@@ -1,29 +1,37 @@
-"use server";
+"use client";
 
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-async function getData() {
-  const res = await fetch(
-    `https://graph.instagram.com/me/media?fields=id,media_url&access_token=${process.env.INSTAGRAM_KEY}`
-  );
-  // The return value is *not* serialized
-  // You can return Date, Map, Set, etc.
+// async function getData() {
+//   const res = await fetch(
+//     `https://graph.instagram.com/me/media?fields=id,media_url&access_token=${process.env.INSTAGRAM_KEY}`
+//   );
+//   // The return value is *not* serialized
+//   // You can return Date, Map, Set, etc.
 
-  if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error("Failed to fetch data");
-  }
+//   if (!res.ok) {
+//     // This will activate the closest `error.js` Error Boundary
+//     throw new Error("Failed to fetch data");
+//   }
 
-  const feed = await res.json();
+//   const feed = await res.json();
 
-  return feed;
-}
+//   return feed;
+// }
 
-const InstagramFeed = async () => {
-  const feed = await getData();
-  const images = feed.data;
-  console.log(images);
+const InstagramFeed = () => {
+  // const feed = await getData();
+  // const images = feed.data;
+  // console.log(images);
+  const [images, setImages] = useState([]);
+
+  useEffect(() => {
+    fetch("/api/")
+      .then((res) => res.json())
+      .then((feed) => setImages(feed.data));
+  }, []);
 
   return (
     <section className="instagram-feed-container">
