@@ -31,8 +31,8 @@ export default async function Home() {
                     <Image
                       src={image.media_url}
                       alt="instagram image"
-                      width={600}
-                      height={600}
+                      width={500}
+                      height={500}
                       priority
                     />
                   </div>
