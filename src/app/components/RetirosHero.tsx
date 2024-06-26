@@ -1,6 +1,6 @@
 // import { useLanguage } from "../contexts/ContextHooks";
 import Image from "next/image";
-import { RetirosItems } from "../_data/RetirosItems";
+import { RetirosItems } from "../_data/Retiros-Talleres-Items";
 import { useEffect, useState, useRef } from "react";
 import { useLanguage } from "../_contexts/ContextHooks";
 

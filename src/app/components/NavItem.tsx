@@ -18,6 +18,7 @@ type NavItemProps = {
   textEN: string;
   navName?: string;
   navExtraItems?: NavExtraItems[];
+  id?: "retiros-talleres" | "terapias";
 };
 
 const NavItem = ({
@@ -28,6 +29,7 @@ const NavItem = ({
   textEN,
   navName,
   navExtraItems,
+  id,
 }: NavItemProps) => {
   const { navActive, setNavActive } = useNav();
   const { language } = useLanguage();
@@ -92,9 +94,9 @@ const NavItem = ({
         <span className="nav-more"></span>
       </Link>
       <div
-        className={
+        className={`${
           extraNav === navName ? "nav-extra-item active" : "nav-extra-item"
-        }
+        } ${id === "retiros-talleres" ? "retiros-talleres" : "terapias"}`}
       >
         <ul className="nav-items">
           {navExtraItems?.map((item, index) => {

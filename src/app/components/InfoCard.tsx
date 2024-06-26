@@ -1,16 +1,18 @@
 import MainBtn from "./MainBtn";
 import { useLanguage } from "../_contexts/ContextHooks";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import InViewEl from "./InView";
 
 type InfoCardProps = {
-  imgSrc: string;
+  key?: number;
+  imgSrc: StaticImageData | string;
   nameES: string;
   nameEN: string;
   dateES?: string;
   dateEN?: string;
   btnBgColor: "blue" | "white";
   alt: string;
+  href: string;
 };
 
 const InfoCard = (props: InfoCardProps) => {
@@ -40,7 +42,7 @@ const InfoCard = (props: InfoCardProps) => {
         </div>
       )}
 
-      <MainBtn target={false} href="/" bgColor={props.btnBgColor}>
+      <MainBtn target={false} href={props.href} bgColor={props.btnBgColor}>
         {language === "ES" ? "más información" : "more info"}
       </MainBtn>
     </InViewEl>

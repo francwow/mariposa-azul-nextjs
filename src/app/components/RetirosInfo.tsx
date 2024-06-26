@@ -2,11 +2,8 @@
 
 import Image from "next/image";
 import { useLanguage } from "../_contexts/ContextHooks";
-import { RetirosItems } from "../_data/RetirosItems";
+import { RetirosItems } from "../_data/Retiros-Talleres-Items";
 import Flowers from "./Flowers";
-import Icon from "./GoogleIcon";
-import SpecialCTA from "./SpecialCTA";
-import TransitionArrow from "./TransitionArrow";
 import InViewEl from "./InView";
 
 type RetirosInfoProps = {
@@ -18,6 +15,7 @@ const RetirosInfo = ({ id }: RetirosInfoProps) => {
 
   return (
     <section className="retiros-info-section content-section">
+      <Flowers number={2} />
       {RetirosItems.map((item, i) => {
         return id === item.id ? (
           <div className="info-wrapper" key={i}>
@@ -44,7 +42,7 @@ const RetirosInfo = ({ id }: RetirosInfoProps) => {
                   <p>
                     {language === "ES"
                       ? item.contDescESOne
-                      : item.contDescESTwo}
+                      : item.contDescENOne}
                   </p>
                 </div>
               )}
@@ -68,91 +66,6 @@ const RetirosInfo = ({ id }: RetirosInfoProps) => {
                   );
                 })}
               </InViewEl>
-            </div>
-            <TransitionArrow />
-            <InViewEl activeClass="info-container fade-in" notActiveClass="">
-              <div
-                style={{
-                  background: `url("${item.infoImg.src}")`,
-                  backgroundAttachment: "fixed",
-                  backgroundPosition: "center",
-                  backgroundSize: "cover",
-                }}
-                className="retiros-info-tematico"
-              >
-                <div className="retiros-tematico-overlay"></div>
-                {/* <div className="retiros-tematico-divider"></div> */}
-                <div className="info-container">
-                  <div className="retiros-info-overlay"></div>
-                  <InViewEl
-                    activeClass="info-heading fade-up"
-                    notActiveClass="info-heading"
-                  >
-                    <h2>
-                      {language === "ES"
-                        ? "Contenido Temático"
-                        : "Thematic Content"}
-                    </h2>
-                  </InViewEl>
-                  <InViewEl
-                    activeClass="info-text fade-right"
-                    notActiveClass="info-text"
-                  >
-                    <ul className="info-items">
-                      {language === "ES"
-                        ? item.contTemES.map((contItem, j) => {
-                            return (
-                              <div className="info-item" key={j}>
-                                <Icon icon="arrow_forward_ios" />
-                                <li>{contItem}</li>
-                              </div>
-                            );
-                          })
-                        : item.contTemEN.map((contItem, j) => {
-                            return (
-                              <div className="info-item" key={j}>
-                                <Icon icon="arrow_forward_ios" />
-                                <li>{contItem}</li>
-                              </div>
-                            );
-                          })}
-                    </ul>
-                  </InViewEl>
-                </div>
-                <div className="retiros-cta info">
-                  <SpecialCTA item={item} />
-                </div>
-              </div>
-            </InViewEl>
-            <TransitionArrow />
-            <div className="info-container">
-              <Flowers number={2} />
-              <div className="info-text">
-                <InViewEl
-                  activeClass="info-heading fade-up"
-                  notActiveClass="info-heading"
-                >
-                  <h2>
-                    {language === "ES" ? "Facilitadores" : "Facilitators"}
-                  </h2>
-                </InViewEl>
-                <div className="info-text">
-                  {item.facilitadores.map((contItem, i) => {
-                    return (
-                      <div key={i} className="info">
-                        <InViewEl activeClass="fade-up" notActiveClass="">
-                          <h3>{contItem.name}</h3>
-                          <p>
-                            {language === "ES"
-                              ? contItem.textES
-                              : contItem.textEN}
-                          </p>
-                        </InViewEl>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
             </div>
           </div>
         ) : null;

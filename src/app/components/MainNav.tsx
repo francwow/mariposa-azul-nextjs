@@ -18,31 +18,25 @@ const MainNav = () => {
   }, [navActive]);
 
   const navExtraItems1 = [
-    { textES: "Crisálida", textEN: "Chrysalis", href: "/retiros/crisalida" },
     {
-      textES: "Tambor Ceremonial",
-      textEN: "Ceremonial Drum",
-      href: "/retiros/tambor-ceremonial",
-    },
-    {
-      textES: "Ser Libre",
-      textEN: "Be Free",
-      href: "/retiros/ser-libre",
-    },
-    {
-      textES: "Tejiendo en La Naturaleza",
-      textEN: "Weaving in Nature",
-      href: "/retiros/tejido",
-    },
-    {
-      textES: "Terapia de Renacimiento",
-      textEN: "Rebirth Therapy",
+      textES: "Retiro de Renacimiento",
+      textEN: "Rebirth Retreat",
       href: "/retiros/renacimiento",
     },
     {
-      textES: "Desarrollando tu Alquimia Interior",
-      textEN: "Developing your Inner Alchemy",
-      href: "/retiros/alquimia",
+      textES: "Retiro conexión con la naturaleza",
+      textEN: "Retreat connection with nature",
+      href: "/retiros/naturaleza",
+    },
+    {
+      textES: "Taller Tejiendo en La Naturaleza",
+      textEN: "Knitting in Nature Workshop",
+      href: "/talleres/tejido",
+    },
+    {
+      textES: "Taller Tambor Ceremonial",
+      textEN: "Ceremonial Drum Workshop",
+      href: "/talleres/tambor-ceremonial",
     },
   ];
 
@@ -66,6 +60,21 @@ const MainNav = () => {
       textES: "Terapia de duelo",
       textEN: "Grief therapy",
       href: "/terapias/terapia-duelo",
+    },
+    {
+      textES: "Sonoterapia con cuencos de cuarzo",
+      textEN: "Sonotherapy with quartz bowls",
+      href: "/terapias/sonoterapia",
+    },
+    {
+      textES: "Terapia con geometría sagrada",
+      textEN: "Sacred geometry therapy",
+      href: "/terapias/geometria-sagrada",
+    },
+    {
+      textES: "Masaje terapéutico relajante",
+      textEN: "Relaxing therapeutic massage",
+      href: "/terapias/masaje-terapeutico",
     },
   ];
 
@@ -98,6 +107,7 @@ const MainNav = () => {
             extra={true}
             navName="retiros"
             navExtraItems={navExtraItems1}
+            id="retiros-talleres"
           />
           <NavItem
             delay="0.4s"
@@ -107,6 +117,7 @@ const MainNav = () => {
             extra={true}
             navName="terapias"
             navExtraItems={navExtraItems2}
+            id="terapias"
           />
           <NavItem
             delay="0.5s"

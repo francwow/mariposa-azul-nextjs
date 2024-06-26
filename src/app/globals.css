@@ -161,7 +161,6 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
   padding: 2rem 0;
   flex-basis: 30%;
   font-family: var(--font-inter);
-  cursor: pointer;
 }
 
 .info-card-name {
@@ -284,6 +283,11 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
 
 .main-btn-container.blue a {
   background-color: var(--color-blue);
+  color: white;
+}
+
+.main-btn-container.green a {
+  background-color: var(--color-junglegreen);
   color: white;
 }
 
@@ -571,7 +575,8 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
   overflow: hidden;
 }
 
-.instagram-item img {
+.instagram-item img,
+.instagram-item video {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -925,7 +930,9 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
 
 .therapies-items {
   position: relative;
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(auto, 500px);
+  grid-template-rows: auto;
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
@@ -941,10 +948,7 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
   justify-content: center;
   align-items: center;
   padding: 2rem 0;
-  flex-basis: 40%;
   font-family: var(--font-inter);
-  cursor: pointer;
-  min-width: 280px;
 }
 
 .therapies-items .info-card-img {
@@ -1423,8 +1427,8 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
 .retiros-desc p {
   padding: 1rem;
   color: var(--color-dark);
-  font-size: 1.2rem;
-  line-height: 1.7;
+  font-size: 1rem;
+  line-height: 1.5;
   flex-basis: 50%;
   text-align: start;
 }
@@ -2106,7 +2110,6 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
     position: absolute;
     inset: unset;
     width: initial;
-    min-width: 100%;
     height: initial;
     display: block;
     top: 80%;
@@ -2118,6 +2121,14 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
     opacity: 0;
     transition: 0.25s ease transform, 0.1s ease opacity;
     box-shadow: 1px 3px 5px 1px rgba(0, 0, 0, 0.2);
+  }
+
+  .nav-extra-item.retiros-talleres {
+    min-width: 100%;
+  }
+
+  .nav-extra-item.terapias {
+    min-width: 130%;
   }
 
   .nav-extra-item-mobile {
@@ -2177,6 +2188,7 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
 
   /* InicioTherapies */
   .therapies-items {
+    grid-template-columns: repeat(2, minmax(auto, 600px));
     flex-direction: row;
     align-items: flex-start;
     row-gap: 5vw;
@@ -2351,7 +2363,7 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
 
   .retiros-desc p {
     padding: 2rem;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 
   .retiros-collage {

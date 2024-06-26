@@ -4,8 +4,7 @@ import Image from "next/image";
 import { useLanguage } from "../_contexts/ContextHooks";
 import { TerapiasItems } from "../_data/TerapiasItems";
 import Flowers from "./Flowers";
-import InicioTestimonials from "./InicioTestimonials";
-import SpecialCTA from "./SpecialCTA";
+import MainBtn from "./MainBtn";
 
 type TerapiasInfoProps = {
   id: string;
@@ -24,7 +23,15 @@ const TerapiasInfo = ({ id }: TerapiasInfoProps) => {
               {/* <h2>{language === "ES" ? item.textES : item.textEN}</h2> */}
               <div className="info-text">
                 <p>{language === "ES" ? item.descTextES : item.descTextEN}</p>
-                <SpecialCTA item={item} />
+                <MainBtn
+                  target
+                  bgColor="green"
+                  href="https://wa.me/573104823549?text=¡Hola%20Mariposa%20Azul!%20Estoy%20interesad@%20en%20..."
+                >
+                  {language === "ES"
+                    ? "Más información aquí"
+                    : "More info here"}
+                </MainBtn>
               </div>
               <div className="info-img">
                 <Image
@@ -40,7 +47,6 @@ const TerapiasInfo = ({ id }: TerapiasInfoProps) => {
           </div>
         ) : null;
       })}
-      <InicioTestimonials />
     </section>
   );
 };

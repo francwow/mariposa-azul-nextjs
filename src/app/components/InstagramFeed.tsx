@@ -1,59 +1,126 @@
-"use server";
-// import { useEffect, useState } from "react";
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState, memo } from "react";
 
-async function getData() {
-  let url = `https://graph.instagram.com/me/media?fields=id,media_url&access_token=${process.env.INSTAGRAM_KEY}`;
-  const res = await fetch(url);
-  // The return value is *not* serialized
-  // You can return Date, Map, Set, etc.
+type InstagramPost = {
+  id: string;
+  caption: string;
+  media_url: string;
+  media_type: string;
+  timestamp: string;
+  permalink: string;
+};
 
-  if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error("Failed to fetch data");
-  }
+type InstagramPaging = {
+  cursors: {
+    before: string;
+    after: string;
+  };
+};
 
-  return res.json();
-}
+type InstagramFeedProps = {
+  data: InstagramPost[];
+  paging?: InstagramPaging;
+};
 
-const InstagramFeed = async () => {
-  const feed = await getData();
-  const images = feed.data;
-  console.log(images);
-  // const [images, setImages] = useState([]);
+const InstagramFeed = () => {
+  const [instagramFeed, setInstagramFeed] = useState<InstagramFeedProps | null>(
+    null
+  );
+  // const [after, setAfter] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
-  // useEffect(() => {
-  //   fetch("/api/")
-  //     .then((res) => res.json())
-  //     .then((feed) => setImages(feed.data));
-  // }, []);
+  const fetchFeed = async (after: string | null = null) => {
+    try {
+      let url = `https://graph.instagram.com/me/media?fields=id,caption,media_url,media_type,timestamp,permalink&access_token=${process.env.NEXT_PUBLIC_INSTAGRAM_TOKEN}`;
+      if (after) {
+        url += `&after=${after}`;
+      }
+      const data = await fetch(url);
+
+      if (!data.ok) {
+        throw new Error("Failed to fetch Instagram feed");
+      }
+
+      const feed = await data.json();
+      console.log(feed, "fetch");
+
+      setInstagramFeed((prevFeed) => {
+        if (prevFeed && prevFeed.data.length > 0) {
+          return {
+            ...feed,
+            data: [...feed.data],
+          };
+        }
+        return feed;
+      });
+      // setAfter(feed.paging?.cursors.after);
+    } catch (err: any) {
+      console.error("Error fetching Instagram feed:", err.message);
+      setError(err.message);
+    }
+  };
+
+  // const loadMore = () => {
+  //   fetchFeed(after);
+  //   console.log("load more");
+  // };
+
+  // Fetch the initial feed
+  useEffect(() => {
+    fetchFeed();
+    console.log("useEffect");
+  }, []);
 
   return (
-    <section className="instagram-feed-container">
-      <div className="instagram-feed">
-        {images !== null
-          ? images.map((image: any) => {
-              return (
+    <>
+      {error && <p className="text-red-500">{error}</p>}
+
+      {instagramFeed && (
+        <section className="instagram-feed-container">
+          <h2 className="text-2xl font-semibold">Instagram Feed:</h2>
+          <div className="instagram-feed">
+            {instagramFeed.data.map((post: InstagramPost) => (
+              <div key={post.id} className="instagram-item">
                 <Link
-                  href={"https://www.instagram.com/somos.mariposa.azul/"}
+                  href={post.permalink}
                   target="_blank"
-                  className="instagram-item"
-                  key={image.id}
+                  rel="noopener noreferrer"
+                  className="relative"
                 >
-                  <Image
-                    src={image.media_url}
-                    alt="instagram image"
-                    width={600}
-                    height={600}
-                  />
+                  {post.media_type === "VIDEO" ? (
+                    // eslint-disable-next-line jsx-a11y/media-has-caption
+                    <video
+                      src={post.media_url}
+                      controls={false}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <Image
+                      src={post.media_url}
+                      alt="Retiro de Mariposa Azul en La Vega, Colombia"
+                      className="w-full h-full object-cover"
+                      width={500}
+                      height={500}
+                    />
+                  )}
+
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-300 bg-black bg-opacity-50 flex items-center justify-center p-4 w-full h-[300px]">
+                    <p className="text-white text-center text-xs truncate">
+                      {post.caption}
+                    </p>
+                  </div>
                 </Link>
-              );
-            })
-          : null}
-      </div>
-    </section>
+              </div>
+            ))}
+          </div>
+          {/* {after && <button onClick={loadMore}>Load More</button>} */}
+        </section>
+      )}
+    </>
   );
 };
 
-export default InstagramFeed;
+export default memo(InstagramFeed);
