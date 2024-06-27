@@ -28,7 +28,7 @@ const InicioTherapies = () => {
               nameEN={item.textEN}
               href={item.href}
               alt="Imagen de terapia realizada por Mariposa Azul"
-              btnBgColor="white"
+              btnBgColor="green"
             />
           );
         })}

@@ -10,7 +10,7 @@ type InfoCardProps = {
   nameEN: string;
   dateES?: string;
   dateEN?: string;
-  btnBgColor: "blue" | "white";
+  btnBgColor: "blue" | "white" | "green";
   alt: string;
   href: string;
 };

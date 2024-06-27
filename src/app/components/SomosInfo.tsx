@@ -69,7 +69,7 @@ const SomosInfo = () => {
             <MainBtn
               href="https://www.instagram.com/somos.mariposa.azul/"
               target
-              bgColor="white"
+              bgColor="green"
             >
               Síguenos en Instagram
             </MainBtn>
@@ -95,7 +95,7 @@ const SomosInfo = () => {
             <MainBtn
               href="https://www.instagram.com/somos.mariposa.azul/"
               target
-              bgColor="white"
+              bgColor="green"
             >
               Follow us on Instagram
             </MainBtn>

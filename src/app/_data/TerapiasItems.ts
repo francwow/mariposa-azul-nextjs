@@ -9,6 +9,9 @@ import img8 from "../../../public/terapias/bio-1.webp";
 import img9 from "../../../public/terapias/terapias-cuencos.webp";
 import img10 from "../../../public/terapias/terapias-geometria.webp";
 import img11 from "../../../public/terapias/terapias-masaje.webp";
+import img12 from "../../../public/terapias/cuarzo-1.webp";
+import img13 from "../../../public/terapias/masaje-1.webp";
+import img14 from "../../../public/terapias/geometria-1.webp";
 import { StaticImageData } from "next/image";
 
 export type TerapiasItemType = {
@@ -83,7 +86,7 @@ export const TerapiasItems: TerapiasItemType[] = [
     textES: "Sonoterapia con cuencos de cuarzo",
     textEN: "Sonotherapy with quartz bowls",
     heroImg: img9,
-    infoImg: img8,
+    infoImg: img12,
     descTextES: `La sonoterapia actúa a través del sonido y la vibración de instrumentos que emiten altas y a la vez sutiles frecuencias como los cuencos de cuarzo. Pitágoras afirmaba que "cada cuerpo celestial, cada átomo, produce un sonido particular debido a su movimiento, ritmo o vibración. Es más, todos esos sonidos o vibraciones componen una armonía universal en la que cada elemento, sin perder su propia función y carácter, contribuye a la totalidad".`,
     descTextEN: `Sound therapy works through the sound and vibration of instruments that emit high and at the same time subtle frequencies such as quartz bowls. Pythagoras stated that "each celestial body, each atom, produces a particular sound due to its movement, rhythm or vibration. What's more, all these sounds or vibrations make up a universal harmony in which each element, without losing its own function and character, contributes to the whole."`,
     descTextES2:
@@ -122,7 +125,7 @@ export const TerapiasItems: TerapiasItemType[] = [
     textES: "Terapia con geometría sagrada",
     textEN: "Sacred geometry therapy",
     heroImg: img10,
-    infoImg: img8,
+    infoImg: img14,
     descTextES: `La Geometría Sagrada es una técnica que armoniza tu mente y tu cuerpo mediante figuras geométricas. Durante la sesión armonizamos nuestros patrones mentales y emocionales y obtenemos información que nos permite ser más conscientes y evolucionar. La Geometría Sagrada es el origen de lo que somos, de modo que equilibrarla nos permite reconectar con nuestro Patrón Original y lograr un mayor entendimiento del proceso o procesos por los que estemos pasando en nuestra vida.`,
     descTextEN: `Sacred Geometry is a technique that harmonizes your mind and body through geometric figures. During the session we harmonize our mental and emotional patterns and obtain information that allows us to be more aware and evolve. Sacred Geometry is the origin of who we are, so balancing it allows us to reconnect with our Original Pattern and achieve a greater understanding of the process or processes we are going through in our lives.`,
     descTextES2: `Durante la sesión, a través de la energía enfocada del terapeuta, se armonizan los cuerpos energéticos de la persona que recibe la terapia y se pone en marcha el proceso de equilibrio de la Geometría Sagrada personal, liberando de esta forma patrones y bloqueos energéticos, emocionales y mentales que pueden estar causando anomalías y un funcionamiento poco armónico de la persona.`,
@@ -134,7 +137,7 @@ export const TerapiasItems: TerapiasItemType[] = [
     textES: "Masaje terapéutico relajante",
     textEN: "Relaxing therapeutic massage",
     heroImg: img11,
-    infoImg: img8,
+    infoImg: img13,
     descTextES: `El masaje terapéutico es un tipo de masaje que se utiliza para tratar dolencias físicas y mentales. Es un enfoque integral de la salud y el bienestar que combina la manipulación manual de los tejidos blandos del cuerpo con técnicas de relajación para ayudar a reducir el estrés y el dolor. El objetivo del masaje terapéutico es ayudar al paciente a alcanzar un estado de equilibrio y relajación.`,
     descTextEN: `Therapeutic massage is a type of massage used to treat physical and mental ailments. It is a comprehensive approach to health and wellness that combines manual manipulation of the body's soft tissues with relaxation techniques to help reduce stress and pain. The goal of therapeutic massage is to help the patient achieve a state of balance and relaxation.`,
     id: "masaje-terapeutico",

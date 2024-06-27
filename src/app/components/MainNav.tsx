@@ -85,11 +85,18 @@ const MainNav = () => {
         <NavExtraItem navName="terapias" navExtraItems={navExtraItems2} />
         <Languages mobile={true} />
         <ul className="nav-items">
+          {/* <NavItem
+              delay="0.1s"
+              href="/"
+              textES="Inicio"
+              textEN="Home"
+              extra={false}
+            /> */}
           <NavItem
             delay="0.1s"
-            href="/"
-            textES="Inicio"
-            textEN="Home"
+            href="/pasadia"
+            textES="Pasadía"
+            textEN="Day out"
             extra={false}
           />
           <NavItem

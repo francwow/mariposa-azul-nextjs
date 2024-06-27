@@ -80,7 +80,7 @@ const InstagramFeed = () => {
 
       {instagramFeed && (
         <section className="instagram-feed-container">
-          <h2 className="text-2xl font-semibold">Instagram Feed:</h2>
+          <h2>Instagram Feed</h2>
           <div className="instagram-feed">
             {instagramFeed.data.map((post: InstagramPost) => (
               <div key={post.id} className="instagram-item">
@@ -107,7 +107,7 @@ const InstagramFeed = () => {
                     />
                   )}
 
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-300 bg-black bg-opacity-50 flex items-center justify-center p-4 w-full h-[300px]">
+                  <div className="instagram-caption">
                     <p className="text-white text-center text-xs truncate">
                       {post.caption}
                     </p>
