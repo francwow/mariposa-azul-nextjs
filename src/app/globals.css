@@ -1152,6 +1152,117 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
   font-size: 1.2rem;
 }
 
+/* PasadiaInfo */
+.pasadia-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  gap: 2rem;
+}
+
+.pasadia-info .info {
+  flex-basis: 50%;
+}
+
+.pasadia-info-section .info-wrapper {
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+}
+
+.pasadia-items {
+}
+
+.pasadia-items li {
+  text-decoration: underline;
+  font-size: 1rem;
+  font-family: var(--inter);
+  margin-bottom: 1rem;
+  font-weight: 300;
+}
+
+.pasadia-images {
+  display: block;
+  position: relative;
+  display: grid;
+  gap: 5px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+}
+
+.pasadia-img {
+  position: relative;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+@keyframes pasadia-img {
+  from {
+    transform: rotate(0deg) translateX(2.5%) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(2.5%) rotate(-360deg);
+  }
+}
+
+.pasadia-img:nth-child(1) {
+  animation: pasadia-img 15s linear forwards infinite;
+  animation-delay: 0.21s;
+}
+.pasadia-img:nth-child(2) {
+  animation: pasadia-img 13s linear forwards infinite;
+  animation-delay: 0.2s;
+}
+.pasadia-img:nth-child(3) {
+  animation: pasadia-img 14s linear forwards infinite;
+  animation-delay: 0.1s;
+}
+.pasadia-img:nth-child(4) {
+  animation: pasadia-img 13.7s linear forwards infinite;
+  animation-delay: 0.11s;
+}
+.pasadia-img:nth-child(5) {
+  animation: pasadia-img 14.3s linear forwards infinite;
+  animation-delay: 0.13s;
+}
+.pasadia-img:nth-child(6) {
+  animation: pasadia-img 13.5s linear forwards infinite;
+  animation-delay: 0.2s;
+}
+.pasadia-img:nth-child(7) {
+  animation: pasadia-img 14.5s linear forwards infinite;
+  animation-delay: 0.17s;
+}
+.pasadia-img:nth-child(8) {
+  animation: pasadia-img 15.2s linear forwards infinite;
+  animation-delay: 0.09s;
+}
+
+.pasadia-img:nth-child(9) {
+  animation: pasadia-img 14.8s linear forwards infinite;
+  animation-delay: 0.05s;
+}
+
+.pasadia-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pasadia-cta .info {
+  width: fit-content;
+}
+
+.pasadia-info h3 {
+  font-size: 1.5rem;
+}
+
 /* SomosHero */
 .hero-section {
   width: 100%;
@@ -2254,6 +2365,63 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
   }
   .arrow .symbol {
     font-size: 3rem;
+  }
+
+  /* PasadiaInfo */
+  .pasadia-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+  }
+
+  .pasadia-info-section .info-wrapper {
+    max-width: 1200px;
+    gap: 6rem;
+  }
+
+  .pasadia-info .info-text {
+  }
+
+  .pasadia-items li {
+    text-decoration: underline;
+    font-size: 1.2rem;
+    font-family: var(--inter);
+  }
+
+  .pasadia-images {
+    position: relative;
+    gap: 10px;
+  }
+
+  .pasadia-img:nth-child(1) {
+  }
+  .pasadia-img:nth-child(2) {
+  }
+  .pasadia-img:nth-child(3) {
+  }
+  .pasadia-img:nth-child(4) {
+  }
+  .pasadia-img:nth-child(5) {
+  }
+  .pasadia-img:nth-child(6) {
+  }
+  .pasadia-img:nth-child(7) {
+  }
+  .pasadia-img:nth-child(8) {
+  }
+  .pasadia-img:nth-child(9) {
+  }
+
+  .pasadia-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .pasadia-info h3 {
+    font-size: 2rem;
   }
 
   /* SomosHero */
