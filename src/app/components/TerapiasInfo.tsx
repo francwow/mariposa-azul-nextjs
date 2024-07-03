@@ -22,7 +22,19 @@ const TerapiasInfo = ({ id }: TerapiasInfoProps) => {
             <div className="info terapias-desc">
               {/* <h2>{language === "ES" ? item.textES : item.textEN}</h2> */}
               <div className="info-text">
-                <p>{language === "ES" ? item.descTextES : item.descTextEN}</p>
+                {item.descTextES2 ? (
+                  <>
+                    <p>
+                      {language === "ES" ? item.descTextES : item.descTextEN}
+                    </p>
+                    <p>
+                      {language === "ES" ? item.descTextES2 : item.descTextEN2}
+                    </p>
+                  </>
+                ) : (
+                  <p>{language === "ES" ? item.descTextES : item.descTextEN}</p>
+                )}
+
                 <MainBtn
                   target
                   bgColor="green"
