@@ -29,11 +29,10 @@ const NavItem = ({
   textEN,
   navName,
   navExtraItems,
-  id,
 }: NavItemProps) => {
   const { navActive, setNavActive } = useNav();
   const { language } = useLanguage();
-  const { extraNav, setExtraNav } = useExtraNav();
+  const { setExtraNav } = useExtraNav();
 
   useEffect(() => {
     if (!navActive) {
@@ -75,8 +74,6 @@ const NavItem = ({
           setExtraNav(navName);
         }
       }}
-      // onMouseEnter={() => setExtraNav(navName)}
-      // onMouseLeave={() => setExtraNav(null)}
       onClick={() => {
         setExtraNav(navName);
       }}
@@ -106,23 +103,6 @@ const NavItem = ({
           })}
         </ul>
       </div>
-      {/* <div
-        className={`${
-          extraNav === navName ? "nav-extra-item active" : "nav-extra-item"
-        } ${id === "retiros-talleres" ? "retiros-talleres" : "terapias"}`}
-      >
-        <ul className="nav-items">
-          {navExtraItems?.map((item, index) => {
-            return (
-              <li key={index} className="nav-item">
-                <Link href={item.href}>
-                  {language === "ES" ? item.textES : item.textEN}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-      </div> */}
     </li>
   );
 };
