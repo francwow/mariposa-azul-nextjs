@@ -2028,6 +2028,7 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
   z-index: 99;
   color: white;
   max-width: 720px;
+  padding-bottom: 5rem;
 }
 
 .contact-info-text {
