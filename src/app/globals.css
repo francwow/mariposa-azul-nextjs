@@ -565,7 +565,7 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto;
   gap: 0.5rem;
-  padding: 2rem 1rem;
+  padding: 0;
 }
 
 .instagram-item {
@@ -591,7 +591,7 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
   justify-content: center;
   align-items: center;
   padding: 1rem;
-  opacity: 0;
+  opacity: 1;
   transition: 0.5s ease opacity;
 }
 
@@ -601,7 +601,7 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
 
 .instagram-caption p {
   transform: translate3d(0, 30%, 0);
-  font-size: 0.9rem;
+  font-size: 0.7rem;
   line-height: 1rem;
   color: white;
   overflow: hidden;
@@ -2166,7 +2166,7 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
     gap: 1rem;
-    padding: 6rem 3rem;
+    padding: 3rem;
   }
 
   .instagram-item {
@@ -2179,6 +2179,14 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
     height: 100%;
     object-fit: cover;
     aspect-ratio: 1/1;
+  }
+
+  .instagram-caption {
+    opacity: 0;
+  }
+
+  .instagram-caption p {
+    font-size: 0.9rem;
   }
 
   /* Flowers */
