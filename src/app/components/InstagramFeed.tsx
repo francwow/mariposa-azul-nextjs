@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState, memo } from "react";
+import { useLanguage } from "../_contexts/ContextHooks";
 
 type InstagramPost = {
   id: string;
@@ -26,6 +27,7 @@ type InstagramFeedProps = {
 };
 
 const InstagramFeed = () => {
+  const { language } = useLanguage();
   const [instagramFeed, setInstagramFeed] = useState<InstagramFeedProps | null>(
     null
   );
@@ -80,7 +82,11 @@ const InstagramFeed = () => {
 
       {instagramFeed && (
         <section className="instagram-feed-container">
-          <h2>Instagram Feed</h2>
+          <h2>
+            {language === "ES"
+              ? "Síguenos en Instagram"
+              : "Follow us on Instagram"}
+          </h2>
           <div className="instagram-feed">
             {instagramFeed.data.map((post: InstagramPost) => (
               <div key={post.id} className="instagram-item">

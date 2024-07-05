@@ -5,6 +5,7 @@ import { useLanguage } from "../_contexts/ContextHooks";
 import { RetirosItems } from "../_data/Retiros-Talleres-Items";
 import Flowers from "./Flowers";
 import InViewEl from "./InView";
+import MainBtn from "./MainBtn";
 
 type RetirosInfoProps = {
   id: string;
@@ -35,6 +36,15 @@ const RetirosInfo = ({ id }: RetirosInfoProps) => {
                         ? item.contDescESTwo
                         : item.contDescENTwo}
                     </p>
+                    <MainBtn
+                      target
+                      bgColor="green"
+                      href="https://wa.me/573104823549?text=¡Hola%20Mariposa%20Azul!%20Estoy%20interesad@%20en%20..."
+                    >
+                      {language === "ES"
+                        ? "Más información aquí"
+                        : "More info here"}
+                    </MainBtn>
                   </InViewEl>
                 </div>
               ) : (
@@ -44,6 +54,15 @@ const RetirosInfo = ({ id }: RetirosInfoProps) => {
                       ? item.contDescESOne
                       : item.contDescENOne}
                   </p>
+                  <MainBtn
+                    target
+                    bgColor="green"
+                    href="https://wa.me/573104823549?text=¡Hola%20Mariposa%20Azul!%20Estoy%20interesad@%20en%20..."
+                  >
+                    {language === "ES"
+                      ? "Más información aquí"
+                      : "More info here"}
+                  </MainBtn>
                 </div>
               )}
 

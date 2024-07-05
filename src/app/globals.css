@@ -1585,16 +1585,17 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
   justify-content: center;
   align-items: center;
   margin-bottom: 2rem;
+  padding: 1rem;
   /* background-color: antiquewhite; */
 }
 
 .retiros-desc p {
-  padding: 1rem;
   color: var(--color-dark);
   font-size: 1rem;
   line-height: 1.7;
   flex-basis: 50%;
   text-align: start;
+  margin-bottom: 2rem;
 }
 
 .retiros .info-item {
@@ -2264,6 +2265,10 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
     padding: 1rem;
     font-size: 1.7rem;
     font-weight: 500;
+    border-bottom: none;
+    justify-content: center;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.404);
   }
 
   .nav-more {
@@ -2334,6 +2339,7 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
     font-size: 1rem;
     font-weight: 300;
     padding: 15px;
+    border-bottom: none;
   }
 
   /* <Inicio /> */
@@ -2588,11 +2594,12 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
     align-items: flex-start;
     gap: 5%;
     margin-bottom: 4rem;
+    padding: 2rem;
   }
 
   .retiros-desc p {
-    padding: 2rem;
     font-size: 1.2rem;
+    margin-bottom: 2rem;
   }
 
   .retiros-collage {
@@ -2651,7 +2658,6 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
   }
 
   .terapias-desc .info-text {
-    padding: 2rem;
     margin-right: -4rem;
     background-color: white;
     border-radius: 8px;

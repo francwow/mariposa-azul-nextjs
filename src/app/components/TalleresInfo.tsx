@@ -5,6 +5,7 @@ import { useLanguage } from "../_contexts/ContextHooks";
 import { TalleresItems } from "../_data/Retiros-Talleres-Items";
 import Flowers from "./Flowers";
 import InViewEl from "./InView";
+import MainBtn from "./MainBtn";
 
 type TalleresInfoProps = {
   id: string;
@@ -35,15 +36,35 @@ const TalleresInfo = ({ id }: TalleresInfoProps) => {
                         ? item.contDescESTwo
                         : item.contDescENTwo}
                     </p>
+                    <MainBtn
+                      target
+                      bgColor="green"
+                      href="https://wa.me/573104823549?text=¡Hola%20Mariposa%20Azul!%20Estoy%20interesad@%20en%20..."
+                    >
+                      {language === "ES"
+                        ? "Más información aquí"
+                        : "More info here"}
+                    </MainBtn>
                   </InViewEl>
                 </div>
               ) : (
                 <div className="info retiros-desc">
-                  <p>
-                    {language === "ES"
-                      ? item.contDescESOne
-                      : item.contDescENOne}
-                  </p>
+                  <InViewEl activeClass="fade-up" notActiveClass="">
+                    <p>
+                      {language === "ES"
+                        ? item.contDescESOne
+                        : item.contDescENOne}
+                    </p>
+                    <MainBtn
+                      target
+                      bgColor="green"
+                      href="https://wa.me/573104823549?text=¡Hola%20Mariposa%20Azul!%20Estoy%20interesad@%20en%20..."
+                    >
+                      {language === "ES"
+                        ? "Más información aquí"
+                        : "More info here"}
+                    </MainBtn>
+                  </InViewEl>
                 </div>
               )}
 
