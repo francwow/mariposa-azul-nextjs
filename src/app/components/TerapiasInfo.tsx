@@ -46,6 +46,7 @@ const TerapiasInfo = ({ id }: TerapiasInfoProps) => {
                 </MainBtn>
               </div>
               <div className="info-img">
+                <div className="info-img-overlay"></div>
                 <Image
                   src={item.infoImg}
                   alt="Imagen de terapia de Mariposa Azul"
@@ -56,6 +57,32 @@ const TerapiasInfo = ({ id }: TerapiasInfoProps) => {
                 />
               </div>
             </div>
+            {item.extraItems ? (
+              <div className="info terapias-items-container">
+                <h3>
+                  {language === "ES"
+                    ? item.extraItems.itemsHeadingES
+                    : item.extraItems.itemsHeadingEN}
+                </h3>
+                <ul className="terapias-items">
+                  {language === "ES"
+                    ? item.extraItems.itemsES.map((item, index) => {
+                        return (
+                          <li key={index} className="terapias-item">
+                            {item}
+                          </li>
+                        );
+                      })
+                    : item.extraItems.itemsEN.map((item, index) => {
+                        return (
+                          <li key={index} className="terapias-item">
+                            {item}
+                          </li>
+                        );
+                      })}
+                </ul>
+              </div>
+            ) : null}
           </div>
         ) : null;
       })}
