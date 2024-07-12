@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useLanguage } from "../_contexts/ContextHooks";
 import InViewEl from "./InView";
 import MainBtn from "./MainBtn";
@@ -26,6 +27,14 @@ const SomosInfo = () => {
           activeClass="somos-video fade-up"
           notActiveClass="somos-video"
         >
+          <div className="somos-video-logo">
+            <Image
+              src={"/logo/logo-website.webp"}
+              alt="Logo de Mariposa Azul"
+              width={500}
+              height={500}
+            />
+          </div>
           <video
             width={1280}
             height={720}

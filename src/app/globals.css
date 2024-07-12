@@ -1375,6 +1375,20 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
 .somos-video {
   border-radius: 8px;
   overflow: hidden;
+  position: relative;
+}
+
+.somos-video-logo {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.somos-video-logo img {
+  width: 250px;
+  height: auto;
 }
 
 .info-text {
