@@ -1373,7 +1373,7 @@ section:not(.inicio-carousel, .hero-section, .contact-section) {
 }
 
 .somos-video {
-  border-radius: 8px;
+  border-radius: 9px;
   overflow: hidden;
   position: relative;
 }
